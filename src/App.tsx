@@ -1,45 +1,54 @@
 import FadingScreen from './components/FadingScreen/FadingScreen';
 import blahaj from './assets/roomImages/blahaj.jpg';
+import door2 from './assets/roomImages/door2.jpg';
 import './App.css';
+import ImageSlide from './components/ImageSlide/ImageSlide';
 
 function App() {
   return (
     <div className="App">
-      <h1 style={{
-        color: 'white',
-        position: 'absolute',
-        top: '33vh',
-        left: '16vh',
-        zIndex: 5,
-        fontSize: '10vh',
-        textShadow: '0 0 25px black'
-      }}>hey! i'm axi
+      <FadingScreen color={'black'} />
+      <ImageSlide imageSource={blahaj}>
+        {/* TODO: Make this styling dependent on device */}
+        <h1 style={{
+          fontSize: '5vw',
+          textShadow: '0 0 25px black',
+          position: 'absolute',
+          top: 'calc(55vh - 2.5vw)',
+          left: '18vw',
+          zIndex: 3,
+          textDecoration: 'underline',
+          textUnderlineOffset: '1vh',
+        }}>Hey! I'm Axi
+        </h1>
         <p style={{
-          fontSize: '2vh',
+          fontSize: '1vw',
+          gridColumn: '1',
+          gridRow: '1',
+          alignSelf: 'start',
+          justifySelf: 'start',
         }}>
           (this website is under construction)
         </p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <p style={{
-          fontSize: '5vh',
+          fontSize: '25px',
+          gridColumn: '1 / 3',
+          gridRow: '3 / 6',
+          textShadow: '0 0 15px black',
         }}>
-          i'm a software engineer and i like to make things
+          I'm a software engineer and
           <br />
-          i also do web development
+          I like to make things
+          <br />
+          I also do web development!
         </p>
-      </h1>
-      <FadingScreen color={'black'} />
-      <img className="fullImage" src={blahaj} />
-    </div>
+      </ImageSlide >
+      <ImageSlide imageSource={door2}>
+        <div style={{ gridColumn: '1', gridRow: '1 / 3', position: 'relative', right: '-25px', top: '25px' }}>
+          <p>Another test</p>
+        </div>
+      </ImageSlide>
+    </div >
   );
 }
 
