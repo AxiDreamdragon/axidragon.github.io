@@ -3,6 +3,7 @@ import blahaj from './assets/roomImages/blahaj.jpg';
 import door2 from './assets/roomImages/door2.jpg';
 import './App.css';
 import ImageSlide from './components/ImageSlide/ImageSlide';
+import PolaroidDivider from './components/PolaroidDivider/PolaroidDivider';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           justifySelf: 'start',
         }}>
           (this website is under construction)
+          <br />
+          (yes, I am aware that the styling is bad)
         </p>
         <p style={{
           fontSize: '25px',
@@ -42,7 +45,10 @@ function App() {
           <br />
           I also do web development!
         </p>
-      </ImageSlide >
+      </ImageSlide>
+      <PolaroidDivider>
+        <h1>Work</h1>
+      </PolaroidDivider>
       <ImageSlide imageSource={door2}>
         <div style={{ gridColumn: '1', gridRow: '1 / 3', position: 'relative', right: '-25px', top: '25px' }}>
           <p>Another test</p>
