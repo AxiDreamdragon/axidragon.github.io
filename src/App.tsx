@@ -1,9 +1,11 @@
-import FadingScreen from './components/FadingScreen/FadingScreen';
-import blahaj from './assets/roomImages/blahaj.jpg';
-import door2 from './assets/roomImages/door2.jpg';
+import FadingScreen from '@components/FadingScreen/FadingScreen';
+import blahaj from '@/assets/roomImages/blahaj.jpg';
+import door2 from '@/assets/roomImages/door2.jpg';
+import workText from '@/assets/text/workMarker.png';
 import './App.css';
-import ImageSlide from './components/ImageSlide/ImageSlide';
-import PolaroidDivider from './components/PolaroidDivider/PolaroidDivider';
+import ImageSlide from '@components/ImageSlide/ImageSlide';
+import PolaroidDivider from '@components/PolaroidDivider/PolaroidDivider';
+import ProjectSlider from '@components/ProjectSlider/ProjectSlider';
 
 function App() {
   return (
@@ -47,12 +49,10 @@ function App() {
         </p>
       </ImageSlide>
       <PolaroidDivider>
-        <h1>Work</h1>
+        <img src={workText} style={{ height: 150 }} />
       </PolaroidDivider>
       <ImageSlide imageSource={door2}>
-        <div style={{ gridColumn: '1', gridRow: '1 / 3', position: 'relative', right: '-25px', top: '25px' }}>
-          <p>Another test</p>
-        </div>
+        <ProjectSlider />
       </ImageSlide>
     </div >
   );
