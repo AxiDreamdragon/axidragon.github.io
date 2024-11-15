@@ -27,17 +27,18 @@ function App() {
       const delta = event.deltaY;
       const screenHeight = window.innerHeight;
       const currentScroll = window.scrollY;
+      let closestScreen = Math.round(currentScroll / screenHeight) * screenHeight;
 
       if (delta > 0) {
         console.log('scrolling down');
         window.scrollTo({
-          top: currentScroll + screenHeight,
+          top: closestScreen + screenHeight,
           behavior: 'smooth',
         });
       } else {
         console.log('scrolling up');
         window.scrollTo({
-          top: currentScroll - screenHeight,
+          top: closestScreen - screenHeight,
           behavior: 'smooth',
         });
       }
@@ -116,9 +117,6 @@ function App() {
         </PolaroidDivider>
         <ProjectSlider />
       </ImageSlide>
-      <ImageSlide imageSource={door2} />
-      <ImageSlide imageSource={door2} />
-      <ImageSlide imageSource={door2} />
       <ImageSlide imageSource={door2} />
     </div >
   );
