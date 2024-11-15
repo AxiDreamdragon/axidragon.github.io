@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 
 import FadingScreen from '@components/FadingScreen/FadingScreen';
 import ImageSlide from '@components/ImageSlide/ImageSlide';
-import PolaroidDivider from '@components/PolaroidDivider/PolaroidDivider';
+import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 
-import blahaj from '@/assets/roomImages/blahaj.jpg';
-import door2 from '@/assets/roomImages/door2.jpg';
+import blahaj from '@/assets/roomImages/blahaj.png';
+import wall from '@/assets/roomImages/wall.png';
+
 import workText from '@/assets/text/workMarker.png';
 import polaroid from '@/assets/polaroid.jpg';
+
 
 function App() {
   const [canScroll, setCanScroll] = useState<boolean>(true);
@@ -75,7 +77,7 @@ function App() {
 
   return (
     <div className="App">
-      <FadingScreen color={'black'} />
+      {/* <FadingScreen color={'black'} /> */}
       <ImageSlide imageSource={blahaj}>
         {/* TODO: Make this styling dependent on device */}
         <h1 style={{
@@ -124,48 +126,22 @@ function App() {
           <img src={workText} style={{ width: '100%', maxWidth: 'min(70%, 500px)' }} />
         </div>
       </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>Broodje Kaas</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>Artkeeper</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>SSHPlus</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>Exersite</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>Exersite Manager</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>D20 Timer</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>People not Opinions</p>
-        </PolaroidDivider>
-      </ImageSlide>
+      <ProjectSlide
+        backgroundImage={wall}
+        headerImage={workText}
+        description={'Broodje Kaas'}>
+        {/* TODO: turn this into another component */}
+        <div className='image-wrapper' style={{ gridRow: 2, gridColumn: '1 / 3' }} >
+          <img src={wall} className='project-image' height={'100%'} />
+        </div>
+      </ProjectSlide >
+      <p>Broodje Kaas</p>
+      <p>Artkeeper</p>
+      <p>SSHPlus</p>
+      <p>Exersite</p>
+      <p>Exersite Manager</p>
+      <p>D20 Timer</p>
+      <p>People not Opinions</p>
     </div >
   );
 }
