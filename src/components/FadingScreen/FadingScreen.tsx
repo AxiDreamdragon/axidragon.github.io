@@ -26,13 +26,25 @@ export default function FadingScreen({ color }: Props) {
 			if (opacity === 0) {
 				body.style.overflow = 'auto';
 				window.removeEventListener('wheel', handleScroll);
-				window.dispatchEvent(new Event('fadingScreenComplete'));
+				window.dispatchEvent(new CustomEvent('setHandleScroll', {
+					detail: {
+						canScroll: true
+					}
+				}));
 			} else {
 				body.style.overflow = 'hidden';
 			}
 		}
 
 		body.style.overflow = 'hidden';
+
+		setTimeout(() => {
+			window.dispatchEvent(new CustomEvent('setHandleScroll', {
+				detail: {
+					canScroll: false
+				}
+			}));
+		}, 0);
 
 		window.addEventListener('wheel', handleScroll, { passive: false });
 

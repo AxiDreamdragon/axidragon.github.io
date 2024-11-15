@@ -9,7 +9,7 @@ import ProjectSlider from '@components/ProjectSlider/ProjectSlider';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [canScroll, setCanScroll] = useState<boolean>(false);
+  const [canScroll, setCanScroll] = useState<boolean>(true);
 
   useEffect(() => {
     let throttled = false;
@@ -29,14 +29,14 @@ function App() {
       const currentScroll = window.scrollY;
       let closestScreen = Math.round(currentScroll / screenHeight) * screenHeight;
 
+
+
       if (delta > 0) {
-        console.log('scrolling down');
         window.scrollTo({
           top: closestScreen + screenHeight,
           behavior: 'smooth',
         });
       } else {
-        console.log('scrolling up');
         window.scrollTo({
           top: closestScreen - screenHeight,
           behavior: 'smooth',
@@ -60,14 +60,15 @@ function App() {
       body.style.overflow = 'hidden';
     }
 
-    const fadingScreenCompleteEvent = () => {
-      setCanScroll(true);
+    const setHandleScroll = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setCanScroll(customEvent.detail.canScroll);
     }
 
-    window.addEventListener('fadingScreenComplete', fadingScreenCompleteEvent);
+    window.addEventListener('setHandleScroll', setHandleScroll);
 
     return () => {
-      window.removeEventListener('fadingScreenComplete', fadingScreenCompleteEvent);
+      window.removeEventListener('setHandleScroll', setHandleScroll);
     }
   }, [canScroll]);
 
