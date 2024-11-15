@@ -5,3 +5,8 @@
 	right: 0;
 	bottom: 0;
 }
+
+.polaroid-header {
+	width: 50%;
+	max-width: 150px;
+}

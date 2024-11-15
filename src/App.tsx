@@ -1,12 +1,15 @@
+import './App.css';
+
+import { useEffect, useState } from 'react';
+
 import FadingScreen from '@components/FadingScreen/FadingScreen';
+import ImageSlide from '@components/ImageSlide/ImageSlide';
+import PolaroidDivider from '@components/PolaroidDivider/PolaroidDivider';
+
 import blahaj from '@/assets/roomImages/blahaj.jpg';
 import door2 from '@/assets/roomImages/door2.jpg';
 import workText from '@/assets/text/workMarker.png';
-import './App.css';
-import ImageSlide from '@components/ImageSlide/ImageSlide';
-import PolaroidDivider from '@components/PolaroidDivider/PolaroidDivider';
-import ProjectSlider from '@components/ProjectSlider/ProjectSlider';
-import { useEffect, useState } from 'react';
+import polaroid from '@/assets/polaroid.jpg';
 
 function App() {
   const [canScroll, setCanScroll] = useState<boolean>(true);
@@ -28,8 +31,6 @@ function App() {
       const screenHeight = window.innerHeight;
       const currentScroll = window.scrollY;
       let closestScreen = Math.round(currentScroll / screenHeight) * screenHeight;
-
-
 
       if (delta > 0) {
         window.scrollTo({
@@ -112,13 +113,71 @@ function App() {
           I also do web development!
         </p>
       </ImageSlide>
+      <ImageSlide imageSource={polaroid}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+          width: '100%',
+        }}>
+          <img src={workText} style={{ width: '100%', maxWidth: 500 }} />
+        </div>
+      </ImageSlide>
       <ImageSlide imageSource={door2}>
         <PolaroidDivider>
-          <img src={workText} style={{ width: '50%', maxWidth: 150, }} />
+          <img src={workText} className='polaroid-header' />
+          <p>Broodje Kaas</p>
         </PolaroidDivider>
-        <ProjectSlider />
       </ImageSlide>
-      <ImageSlide imageSource={door2} />
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>Artkeeper</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>SSHPlus</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>Exersite</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>Exersite Manager</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>D20 Timer</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>People not Opinions</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>City Generator</p>
+        </PolaroidDivider>
+      </ImageSlide>
+      <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} className='polaroid-header' />
+          <p>Super Bean Isle</p>
+        </PolaroidDivider>
+      </ImageSlide>
     </div >
   );
 }

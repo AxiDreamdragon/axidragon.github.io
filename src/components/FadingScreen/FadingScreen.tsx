@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './FadingScreen.module.css';
 
 
@@ -8,6 +8,7 @@ type Props = {
 
 export default function FadingScreen({ color }: Props) {
 	const [opacity, setOpacity] = useState<number>(1);
+	const screen = useRef<HTMLDivElement>(null);
 	const body: HTMLElement = document.querySelector('body') as HTMLElement;
 
 	useEffect(() => {
@@ -31,6 +32,9 @@ export default function FadingScreen({ color }: Props) {
 						canScroll: true
 					}
 				}));
+				if (screen.current) {
+					screen.current.style.display = 'none';
+				}
 			} else {
 				body.style.overflow = 'hidden';
 			}
@@ -54,7 +58,7 @@ export default function FadingScreen({ color }: Props) {
 	}, [opacity]);
 
 	return (
-		<div className={styles.container}>
+		<div ref={screen} className={styles.container}>
 			<div
 				className={styles.screen}
 				style={{ opacity, backgroundColor: color }}
