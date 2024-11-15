@@ -6,8 +6,70 @@ import './App.css';
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import PolaroidDivider from '@components/PolaroidDivider/PolaroidDivider';
 import ProjectSlider from '@components/ProjectSlider/ProjectSlider';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [canScroll, setCanScroll] = useState<boolean>(false);
+
+  useEffect(() => {
+    let throttled = false;
+
+    const handleScroll = (event: WheelEvent) => {
+      if (throttled || !canScroll)
+        return;
+
+      throttled = true;
+
+      setTimeout(() => {
+        throttled = false;
+      }, 500);
+
+      const delta = event.deltaY;
+      const screenHeight = window.innerHeight;
+      const currentScroll = window.scrollY;
+
+      if (delta > 0) {
+        console.log('scrolling down');
+        window.scrollTo({
+          top: currentScroll + screenHeight,
+          behavior: 'smooth',
+        });
+      } else {
+        console.log('scrolling up');
+        window.scrollTo({
+          top: currentScroll - screenHeight,
+          behavior: 'smooth',
+        });
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    }
+  }, [canScroll]);
+
+  useEffect(() => {
+    const body: HTMLElement = document.querySelector('body') as HTMLElement;
+
+    if (canScroll) {
+      body.style.overflow = 'auto';
+    } else {
+      body.style.overflow = 'hidden';
+    }
+
+    const fadingScreenCompleteEvent = () => {
+      setCanScroll(true);
+    }
+
+    window.addEventListener('fadingScreenComplete', fadingScreenCompleteEvent);
+
+    return () => {
+      window.removeEventListener('fadingScreenComplete', fadingScreenCompleteEvent);
+    }
+  }, [canScroll]);
+
   return (
     <div className="App">
       <FadingScreen color={'black'} />
@@ -54,6 +116,10 @@ function App() {
         </PolaroidDivider>
         <ProjectSlider />
       </ImageSlide>
+      <ImageSlide imageSource={door2} />
+      <ImageSlide imageSource={door2} />
+      <ImageSlide imageSource={door2} />
+      <ImageSlide imageSource={door2} />
     </div >
   );
 }

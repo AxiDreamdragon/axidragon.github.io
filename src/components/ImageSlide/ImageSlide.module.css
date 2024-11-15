@@ -7,4 +7,5 @@
 	align-items: center;
 	justify-items: center;
 	overflow: hidden;
+	scroll-snap-align: start;
 }

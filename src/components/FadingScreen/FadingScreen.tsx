@@ -25,6 +25,8 @@ export default function FadingScreen({ color }: Props) {
 
 			if (opacity === 0) {
 				body.style.overflow = 'auto';
+				window.removeEventListener('wheel', handleScroll);
+				window.dispatchEvent(new Event('fadingScreenComplete'));
 			} else {
 				body.style.overflow = 'hidden';
 			}
