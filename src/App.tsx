@@ -48,10 +48,10 @@ function App() {
           I also do web development!
         </p>
       </ImageSlide>
-      <PolaroidDivider>
-        <img src={workText} style={{ height: 150 }} />
-      </PolaroidDivider>
       <ImageSlide imageSource={door2}>
+        <PolaroidDivider>
+          <img src={workText} style={{ width: '50%', maxWidth: 150, }} />
+        </PolaroidDivider>
         <ProjectSlider />
       </ImageSlide>
     </div >

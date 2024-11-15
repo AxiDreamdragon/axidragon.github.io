@@ -8,8 +8,7 @@ type Props = {
 
 const ImageSlide: React.FC<Props> = ({ imageSource, children }) => {
 	return (
-		<div className={styles.container}>
-			<img className={styles.image} src={imageSource} />
+		<div className={styles.container} style={{ backgroundImage: `url(${imageSource})` }}>
 			{children}
 		</div>
 	);
