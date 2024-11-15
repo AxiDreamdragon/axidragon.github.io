@@ -121,7 +121,7 @@ function App() {
           height: '100%',
           width: '100%',
         }}>
-          <img src={workText} style={{ width: '100%', maxWidth: 500 }} />
+          <img src={workText} style={{ width: '100%', maxWidth: 'min(70%, 500px)' }} />
         </div>
       </ImageSlide>
       <ImageSlide imageSource={door2}>
@@ -164,18 +164,6 @@ function App() {
         <PolaroidDivider>
           <img src={workText} className='polaroid-header' />
           <p>People not Opinions</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>City Generator</p>
-        </PolaroidDivider>
-      </ImageSlide>
-      <ImageSlide imageSource={door2}>
-        <PolaroidDivider>
-          <img src={workText} className='polaroid-header' />
-          <p>Super Bean Isle</p>
         </PolaroidDivider>
       </ImageSlide>
     </div >
