@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
