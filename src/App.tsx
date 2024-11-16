@@ -13,13 +13,12 @@ import polaroid from '@/assets/polaroid.png';
 
 
 function App() {
-  const [canScroll, setCanScroll] = useState<boolean>(true);
-
   useEffect(() => {
     let throttled = false;
 
     const handleScroll = (event: WheelEvent) => {
-      if (throttled || !canScroll)
+      event.preventDefault();
+      if (throttled)
         return;
 
       throttled = true;
@@ -44,6 +43,7 @@ function App() {
           behavior: 'smooth',
         });
       }
+
     };
 
     window.addEventListener('wheel', handleScroll);
@@ -51,28 +51,7 @@ function App() {
     return () => {
       window.removeEventListener('wheel', handleScroll);
     }
-  }, [canScroll]);
-
-  useEffect(() => {
-    const body: HTMLElement = document.querySelector('body') as HTMLElement;
-
-    if (canScroll) {
-      body.style.overflow = 'auto';
-    } else {
-      body.style.overflow = 'hidden';
-    }
-
-    const setHandleScroll = (event: Event) => {
-      const customEvent = event as CustomEvent;
-      setCanScroll(customEvent.detail.canScroll);
-    }
-
-    window.addEventListener('setHandleScroll', setHandleScroll);
-
-    return () => {
-      window.removeEventListener('setHandleScroll', setHandleScroll);
-    }
-  }, [canScroll]);
+  }, []);
 
   return (
     <div className="App">
