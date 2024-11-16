@@ -16,4 +16,5 @@
 	justify-content: start;
 	align-items: center;
 	transition: opacity 0.5s ease-out;
+	z-index: 999;
 }
