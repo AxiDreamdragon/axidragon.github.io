@@ -32,7 +32,7 @@ const StartScreen = () => {
 					I also do web development!
 				</p>
 			</div>
-			<FadingScreen color={'black'} />
+			{/* <FadingScreen color={'black'} /> */}
 		</ImageSlide>
 	);
 };

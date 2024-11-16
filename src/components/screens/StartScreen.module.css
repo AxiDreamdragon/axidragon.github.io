@@ -5,7 +5,7 @@
 	height: 100%;
 	width: 100%;
 	flex-direction: column;
-	color: black;
+	color: white;
 }
 
 .videoContainer {
@@ -24,10 +24,10 @@
 
 .title {
 	z-index: 3;
-	font-size: min(100px, 45vw);
-	text-decoration: underline;
-	text-underline-offset: 5;
+	font-size: min(250px, 40vw);
+	font-weight: 900;
 	text-align: center;
 	padding: 0 25px;
-	/* mix-blend-mode: difference; */
+	text-shadow: 0 0 15px rgb(255, 80, 0);
+	mix-blend-mode: difference;
 }
