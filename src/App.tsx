@@ -4,13 +4,11 @@ import { useEffect, useState } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
-
-import blahaj from '@/assets/roomImages/blahaj.png';
-import wall from '@/assets/roomImages/wall.png';
-
-import workText from '@/assets/text/workMarker.png';
-import polaroid from '@/assets/polaroid.jpg';
 import StartScreen from './components/screens/StartScreen';
+
+import wall from '@/assets/roomImages/wall.png';
+import workText from '@/assets/text/workMarker.png';
+import polaroid from '@/assets/polaroid.png';
 
 
 function App() {

@@ -1,9 +1,10 @@
 .container {
 	width: 100%;
 	z-index: 4;
-	box-shadow: 0 4px 17px 5px rgb(0, 0, 0);
+	box-shadow: 0 4px 17px 5px var(--shadow);
 	color: black;
-	background-image: url('@/assets/polaroid.jpg');
+	background-image: url('@/assets/polaroid.png');
+	background-position: center;
 	padding: 15px 0px 15px 50px;
 	/* Maybe add some rotation? rotate: 0deg; */
 }
