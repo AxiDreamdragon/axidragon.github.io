@@ -43,10 +43,9 @@ function App() {
           behavior: 'smooth',
         });
       }
-
     };
 
-    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('wheel', handleScroll, { passive: false });
 
     return () => {
       window.removeEventListener('wheel', handleScroll);
