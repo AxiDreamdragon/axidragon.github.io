@@ -1,17 +1,15 @@
 import ImageSlide from "@components/ImageSlide/ImageSlide";
 
 import introVideo from "@/assets/videos/placeholderVideo.mp4";
+import axiInverted from "@/assets/text/axi.png";
 
 import styles from './StartScreen.module.css';
-import FadingScreen from "../FadingScreen/FadingScreen";
 
 const StartScreen = () => {
 	return (
 		<ImageSlide imageSource={''}>
-			{/* TODO: Fix fading screen and video Z-ordering issue
-				I could also potentially just transfer the fading screen functionality
-				here, by changing the opacity of the video? */}
 			<div className={styles.videoContainer}>
+				{/* TODO: The images of the video should be lighter to help the contrast */}
 				<video
 					className={styles.video}
 					autoPlay
@@ -22,7 +20,7 @@ const StartScreen = () => {
 				/>
 			</div>
 			<div className={styles.textContainer}>
-				<h1 className={styles.title}>Hey! I'm Axi</h1>
+				<img src={axiInverted} className={styles.title} />
 				<p style={{ position: 'absolute', top: 0 }}>
 					(this website is under construction)
 				</p>
@@ -32,7 +30,6 @@ const StartScreen = () => {
 					I also do web development!
 				</p>
 			</div>
-			{/* <FadingScreen color={'black'} /> */}
 		</ImageSlide>
 	);
 };
