@@ -1,0 +1,12 @@
+.imageWrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.projectImage {
+	object-fit: contain;
+	box-shadow: 0 4px 17px 5px var(--shadow);
+}

@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
-import StartScreen from './components/screens/StartScreen';
+import StartScreen from '@components/screens/StartScreen';
+import ProjectImage, { FillType } from '@components/ProjectImage/ProjectImage';
 
 import wall from '@/assets/roomImages/wall.png';
 import workText from '@/assets/text/workMarker.png';
@@ -90,11 +91,16 @@ function App() {
       <ProjectSlide
         backgroundImage={wall}
         headerImage={workText}
-        description={'Broodje Kaas'}>
-        {/* TODO: turn this into another component */}
-        <div className='image-wrapper' style={{ gridRow: 2, gridColumn: '1 / 3' }} >
-          <img src={wall} className='project-image' height={'100%'} />
-        </div>
+        description={
+          ['Broodje Kaas is not just a game, it is THE game.',
+            'Like, this is crazy, you can play as a sandwich, and you can play as a sandwich with a gun.',
+            "That's not true, I don't know why CoPilot said that. But also, I'm making this very long just to see if this will properly wrap around and stuff like that."
+          ]
+        }>
+        <ProjectImage imageSource={wall}
+          gridRow={2}
+          gridColumn={'1 / 3'}
+          fillType={FillType.HEIGHT} />
       </ProjectSlide >
       <p>Broodje Kaas</p>
       <p>Artkeeper</p>

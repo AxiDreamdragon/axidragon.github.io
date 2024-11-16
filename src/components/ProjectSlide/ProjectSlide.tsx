@@ -6,7 +6,7 @@ import styles from './ProjectSlide.module.css';
 type Props = {
 	backgroundImage: string;
 	headerImage: string;
-	description: string;
+	description: string | string[];
 	//TODO: some sliding image class? different type
 	children?: React.ReactNode;
 }
@@ -18,7 +18,17 @@ const ProjectSlide: React.FC<Props> = ({ backgroundImage, headerImage, descripti
 				<img src={headerImage} className='polaroid-header' />
 			</PolaroidDivider>
 			<div className={styles.container}>
-				<p className={styles.description}>{description}</p>
+				{Array.isArray(description) ? (
+					<div className={styles.description}>
+						{
+							(description.map((paragraph, index) => (
+								<p key={index} className={styles.description} >{paragraph}</p>
+							)))
+						}
+					</div>
+				) : (
+					<p className={styles.description}>{description}</p>
+				)}
 				{children}
 			</div>
 		</ImageSlide>
