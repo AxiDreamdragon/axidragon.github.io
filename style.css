@@ -1,3 +1,7 @@
+:root {
+	--shadow: rgba(91, 33, 0, 0.6);
+}
+
 html,
 body {
 	font-family: "Comfortaa", sans-serif;
