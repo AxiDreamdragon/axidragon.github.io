@@ -13,10 +13,14 @@ type Props = {
 	fillType: FillType;
 }
 
+const rotationVariation = 5;
+
 const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillType = FillType.WIDTH }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const ref = useRef<HTMLDivElement>(null);
 	const animationRef = useRef<string>(getRandomAnimation());
+	const visibleRotationRef = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
+	const invisibleRotationRef = useRef<number>(15 * Math.random() * rotationVariation);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
@@ -40,8 +44,6 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 			observer.observe(ref.current);
 		}
 
-		console.log(animationRef.current);
-
 		return () => {
 			if (ref.current) {
 				observer.unobserve(ref.current);
@@ -61,7 +63,8 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 				style={{
 					[fillType]: '100%',
 					objectFit: 'cover',
-					transform: isVisible ? '' : 'translateX(-100vw) translateY(100vh) rotate(45deg)',
+					transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
+						: `translateX(-100vw) translateY(100vh) rotate(${invisibleRotationRef.current}deg)`,
 					transition: animationRef.current,
 				}}
 			/>
@@ -71,16 +74,10 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 
 export default ProjectImage;
 
-const bezierVariation = 0.25;
-const timeVariation = 1;
-const baseBezier = [0.19, 1, 0.22, 1];
+const baseTime = 0.75;
 
 function getRandomAnimation(): string {
-	const time = Math.random() * timeVariation + (0.5 + timeVariation / 2);
+	const time = Math.random() * baseTime + (baseTime);
 
-	const bezier = baseBezier.map((value, _) => {
-		return value + (Math.random() - 0.5) * bezierVariation;
-	});
-
-	return `all ${time}s cubic-bezier(${bezier.join(', ')})`;
+	return `all ${time}s ease-in-out`;
 }
