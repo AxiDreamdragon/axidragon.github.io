@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.d91624a5.css",
-    "main.js": "./static/js/main.7c02deea.js",
+    "main.css": "./static/css/main.86fb73b1.css",
+    "main.js": "./static/js/main.c8b5b085.js",
+    "static/media/blahaj.png": "./static/media/blahaj.809f569e6a8f17ab7255.png",
+    "static/media/texel1.png": "./static/media/texel1.d5f0ec5ddf396127f9f3.png",
     "static/media/wall.png": "./static/media/wall.3ff9986249bcfa99de06.png",
-    "static/media/polaroid.png": "./static/media/polaroid.111ad4d53e9950f2f1f4.png",
-    "static/media/placeholderVideo.mp4": "./static/media/placeholderVideo.8df1059e9ea547fbd62a.mp4",
+    "static/media/intro.mp4": "./static/media/intro.ce5294a3c86bd2f14e92.mp4",
+    "static/media/longDesk.png": "./static/media/longDesk.924e647cf6e8b601bad9.png",
+    "static/media/door.png": "./static/media/door.0968368211336d1b3c0b.png",
+    "static/media/polaroid.png": "./static/media/polaroid.fa03e0f57a3cdd67fb5c.png",
     "static/media/workMarker.png": "./static/media/workMarker.5a7e813371fb15f52c1a.png",
     "static/media/axi.png": "./static/media/axi.e6123cfd28774d2bff9b.png",
     "index.html": "./index.html",
-    "main.d91624a5.css.map": "./static/css/main.d91624a5.css.map",
-    "main.7c02deea.js.map": "./static/js/main.7c02deea.js.map"
+    "main.86fb73b1.css.map": "./static/css/main.86fb73b1.css.map",
+    "main.c8b5b085.js.map": "./static/js/main.c8b5b085.js.map"
   },
   "entrypoints": [
-    "static/css/main.d91624a5.css",
-    "static/js/main.7c02deea.js"
+    "static/css/main.86fb73b1.css",
+    "static/js/main.c8b5b085.js"
   ]
 }
