@@ -1,5 +1,6 @@
 .container {
 	display: grid;
+	/* TODO: Gotta fix this formatting to be more adaptable - auto rows and colums? */
 	grid-template-columns: repeat(3, calc(90% / 3));
 	grid-template-rows: repeat(3, calc(90% / 3));
 	padding: 25px 25px;
@@ -16,5 +17,6 @@
 	grid-row: 1;
 	grid-column: 1 / 3;
 	color: black;
+	/* TODO: gotta fix this */
 	font-size: 1vw;
 }
