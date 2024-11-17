@@ -9,9 +9,11 @@ type Props = {
 	description: string | string[];
 	//TODO: some sliding image class? different type
 	children?: React.ReactNode;
+	//TODO: Add an easy way to add links to the project's page, source code or playable game (if allowed/possible)
 }
 
 const ProjectSlide: React.FC<Props> = ({ backgroundImage, headerImage, description, children }) => {
+	// TODO: Fix this grid formation thing. It doesn't work great on mobile, and it's not very flexible.
 	return (
 		<ImageSlide imageSource={backgroundImage}>
 			<PolaroidDivider>
@@ -22,7 +24,7 @@ const ProjectSlide: React.FC<Props> = ({ backgroundImage, headerImage, descripti
 					<div className={styles.description}>
 						{
 							(description.map((paragraph, index) => (
-								<p key={index} className={styles.description} >{paragraph}</p>
+								<p key={index}>{paragraph}</p>
 							)))
 						}
 					</div>

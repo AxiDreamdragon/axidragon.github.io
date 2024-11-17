@@ -7,10 +7,16 @@ import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 import StartScreen from '@components/screens/StartScreen';
 import ProjectImage, { FillType } from '@components/ProjectImage/ProjectImage';
 
-import wall from '@/assets/roomImages/wall.png';
+//TODO: Probably just make a seperate screen per project to avoid this mess
+import wall from '@/assets/room/wall.png';
+import blahaj from '@/assets/room/blahaj.png';
 import workText from '@/assets/text/workMarker.png';
-import polaroid from '@/assets/polaroid.png';
+import texel1 from '@/assets/nature/texel1.png';
+import longDesk from '@/assets/room/longDesk.png';
+import sheets from '@/assets/room/sheets.png';
+import door from '@/assets/room/door.png';
 
+import polaroid from '@/assets/polaroid.png';
 
 function App() {
   useEffect(() => {
@@ -67,7 +73,7 @@ function App() {
         </div>
       </ImageSlide>
       <ProjectSlide
-        backgroundImage={wall}
+        backgroundImage={texel1}
         headerImage={workText}
         description={
           ['Broodje Kaas is not just a game, it is THE game.',
@@ -75,8 +81,20 @@ function App() {
             "That's not true, I don't know why CoPilot said that. But also, I'm making this very long just to see if this will properly wrap around and stuff like that."
           ]
         }>
+        <ProjectImage imageSource={door}
+          gridRow={2}
+          gridColumn={1}
+          fillType={FillType.HEIGHT} />
+        <ProjectImage imageSource={blahaj}
+          gridRow={'1 / 4'}
+          gridColumn={3}
+          fillType={FillType.HEIGHT} />
         <ProjectImage imageSource={wall}
           gridRow={2}
+          gridColumn={2}
+          fillType={FillType.HEIGHT} />
+        <ProjectImage imageSource={longDesk}
+          gridRow={3}
           gridColumn={'1 / 3'}
           fillType={FillType.HEIGHT} />
       </ProjectSlide >
