@@ -25,14 +25,7 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
-				//for debugging
 				setIsVisible(entry.isIntersecting);
-
-				// for production
-				// if (entry.isIntersecting) {
-				// 	setIsVisible(true);
-				// 	observer.unobserve(entry.target);
-				// }
 			});
 		},
 			{
