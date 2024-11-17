@@ -16,21 +16,31 @@ type Props = {
 const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillType = FillType.WIDTH }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const ref = useRef<HTMLDivElement>(null);
+	const animationRef = useRef<string>(getRandomAnimation());
 
 	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
+				//for debugging
 				setIsVisible(entry.isIntersecting);
+
+				// for production
+				// if (entry.isIntersecting) {
+				// 	setIsVisible(true);
+				// 	observer.unobserve(entry.target);
+				// }
 			});
 		},
 			{
-				threshold: 0.5,
+				threshold: 1,
 			}
 		);
 
 		if (ref.current) {
 			observer.observe(ref.current);
 		}
+
+		console.log(animationRef.current);
 
 		return () => {
 			if (ref.current) {
@@ -52,7 +62,7 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 					[fillType]: '100%',
 					objectFit: 'cover',
 					transform: isVisible ? '' : 'translateX(-100vw) translateY(100vh) rotate(45deg)',
-					transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+					transition: animationRef.current,
 				}}
 			/>
 		</div>
@@ -60,3 +70,17 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 }
 
 export default ProjectImage;
+
+const bezierVariation = 0.25;
+const timeVariation = 1;
+const baseBezier = [0.19, 1, 0.22, 1];
+
+function getRandomAnimation(): string {
+	const time = Math.random() * timeVariation + (0.5 + timeVariation / 2);
+
+	const bezier = baseBezier.map((value, _) => {
+		return value + (Math.random() - 0.5) * bezierVariation;
+	});
+
+	return `all ${time}s cubic-bezier(${bezier.join(', ')})`;
+}
