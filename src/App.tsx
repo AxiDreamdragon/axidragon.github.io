@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
@@ -13,12 +13,29 @@ import blahaj from '@/assets/room/blahaj.png';
 import workText from '@/assets/text/workMarker.png';
 import texel1 from '@/assets/nature/texel1.png';
 import longDesk from '@/assets/room/longDesk.png';
-import sheets from '@/assets/room/sheets.png';
 import door from '@/assets/room/door.png';
 
 import polaroid from '@/assets/polaroid.png';
 
 function App() {
+  const [title, setTitle] = useState("AXI-DREAMDRAGON-");
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitle(title => {
+        const lastChar = title.charAt(0);
+        const newTitle = title.substring(1) + lastChar;
+        return newTitle;
+      });
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [title]);
+
   useEffect(() => {
     let throttled = false;
 
