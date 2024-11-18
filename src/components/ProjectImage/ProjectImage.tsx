@@ -15,6 +15,23 @@ type Props = {
 
 const rotationVariation = 5;
 
+const isOnDesktop = () => {
+	const userAgent = navigator.userAgent.toLowerCase();
+	if (/mobile|android|iphone|ipad|phone/i.test(userAgent)) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+function getRandomAnimation(): string {
+	const baseTime = 0.75;
+	const time = Math.random() * baseTime + (baseTime);
+
+	return `all ${time}s ease-in-out`;
+}
+
 const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillType = FillType.WIDTH }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +46,7 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 			});
 		},
 			{
-				threshold: 1,
+				threshold: isOnDesktop() ? 1 : 0.1,
 			}
 		);
 
@@ -66,11 +83,3 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 }
 
 export default ProjectImage;
-
-const baseTime = 0.75;
-
-function getRandomAnimation(): string {
-	const time = Math.random() * baseTime + (baseTime);
-
-	return `all ${time}s ease-in-out`;
-}
