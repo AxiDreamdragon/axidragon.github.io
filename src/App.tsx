@@ -18,24 +18,6 @@ import door from '@/assets/room/door.png';
 import polaroid from '@/assets/polaroid.png';
 
 function App() {
-  const [title, setTitle] = useState("AXI-DREAMDRAGON-");
-
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitle(title => {
-        const lastChar = title.charAt(0);
-        const newTitle = title.substring(1) + lastChar;
-        return newTitle;
-      });
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, [title]);
-
   useEffect(() => {
     let throttled = false;
 
