@@ -83,7 +83,7 @@ function App() {
         <ProjectItem imageSource={blahaj}
           gridRowSpan={3}
           gridColumnSpan={1}
-          fillType={FillType.HEIGHT} />
+          fillType={FillType.WIDTH} />
         <ProjectItem imageSource={door}
           gridRowSpan={1}
           gridColumnSpan={1}

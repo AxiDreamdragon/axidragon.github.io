@@ -63,14 +63,11 @@ const ProjectItem: React.FC<Props> = ({
 			setHiddenTranslation(`translateX(${translateX}vw) translateY(${translateY}vh)`);
 
 			const centerCloseness = Math.abs(x - window.innerWidth / 2) / (window.innerWidth / 2);
-			console.log(x, centerCloseness, imageSource);
 
 			setAnimationTime(baseTime +
 				centerCloseness * centerClosenessMultiplier
 				+ (Math.random() * randomTimeAmplitude - randomTimeAmplitude / 2));
 		}
-
-		console.log(hiddenTranslation);
 	}, [ref.current]);
 
 	useEffect(() => {
