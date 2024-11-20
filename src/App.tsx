@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 import StartScreen from '@components/screens/StartScreen';
-import ProjectImage, { FillType } from '@components/ProjectImage/ProjectImage';
+import ProjectItem, { FillType } from '@/components/ProjectItem/ProjectItem';
 
 //TODO: Probably just make a seperate screen per project to avoid this mess
 import wall from '@/assets/room/wall.png';
@@ -74,25 +74,25 @@ function App() {
       <ProjectSlide
         backgroundImage={texel1}
         headerImage={workText}
-        description={
-          ['Broodje Kaas is not just a game, it is THE game.',
-            'Like, this is crazy, you can play as a sandwich, and you can play as a sandwich with a gun.',
-            "That's not true, I don't know why CoPilot said that. But also, I'm making this very long just to see if this will properly wrap around and stuff like that."
-          ]
-        }>
-        <ProjectImage imageSource={door}
+      >
+        <ProjectItem gridRow={1} gridColumn={'1 / 3'} fillType={FillType.WIDTH} disableRotation>
+          <div className='description'>
+            <p>Broodje Kaas is not just a </p>
+          </div>
+        </ProjectItem>
+        <ProjectItem imageSource={door}
           gridRow={2}
           gridColumn={1}
           fillType={FillType.HEIGHT} />
-        <ProjectImage imageSource={blahaj}
+        <ProjectItem imageSource={blahaj}
           gridRow={'1 / 4'}
           gridColumn={3}
           fillType={FillType.HEIGHT} />
-        <ProjectImage imageSource={wall}
+        <ProjectItem imageSource={wall}
           gridRow={2}
           gridColumn={2}
           fillType={FillType.HEIGHT} />
-        <ProjectImage imageSource={longDesk}
+        <ProjectItem imageSource={longDesk}
           gridRow={3}
           gridColumn={'1 / 3'}
           fillType={FillType.HEIGHT} />

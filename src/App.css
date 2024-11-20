@@ -11,3 +11,12 @@
 	max-width: 150px;
 	z-index: 2;
 }
+
+.description {
+	background-image: url('@/assets/polaroid.png');
+	margin: 25px;
+	padding: 25px;
+	color: black;
+	/* TODO: gotta fix this */
+	font-size: 1vw;
+}

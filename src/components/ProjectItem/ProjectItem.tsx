@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './ProjectImage.module.css';
+import styles from './ProjectItem.module.css';
 
 export enum FillType {
 	HEIGHT = "height",
@@ -7,10 +7,12 @@ export enum FillType {
 }
 
 type Props = {
-	imageSource: string;
+	imageSource?: string;
 	gridRow: number | string;
 	gridColumn: number | string;
 	fillType: FillType;
+	children?: React.ReactNode;
+	disableRotation?: boolean;
 }
 
 const rotationVariation = 7;
@@ -25,13 +27,19 @@ const isOnDesktop = () => {
 	}
 }
 
-const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillType = FillType.WIDTH }) => {
+const ProjectItem: React.FC<Props> = ({
+	imageSource = '',
+	gridRow,
+	gridColumn,
+	fillType = FillType.WIDTH,
+	children,
+	disableRotation = false }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
-	const visibleRotationRef = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
-	const hiddenRotationRef = useRef<number>(15 * Math.random() * rotationVariation);
+	const visibleRotationRef = useRef<number>(disableRotation ? 0 : Math.random() * rotationVariation - rotationVariation / 2);
+	const hiddenRotationRef = useRef<number>(disableRotation ? 0 : 15 * Math.random() * rotationVariation);
 
 	useEffect(() => {
 		if (ref.current) {
@@ -94,17 +102,31 @@ const ProjectImage: React.FC<Props> = ({ imageSource, gridRow, gridColumn, fillT
 				gridRow,
 				gridColumn,
 			}} >
-			<img src={imageSource} className={styles.projectImage}
-				style={{
-					[fillType]: '100%',
-					objectFit: 'cover',
-					transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
-						: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-					transition: `all ${animationTime}s ease-in-out`,
-				}}
-			/>
+			{
+				imageSource !== '' ?
+					<img src={imageSource} className={styles.projectImage}
+						style={{
+							[fillType]: '100%',
+							objectFit: 'cover',
+							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
+								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+							transition: `all ${animationTime}s ease-in-out`,
+						}}
+					/>
+					:
+					<div
+						style={{
+							[fillType]: '100%',
+							objectFit: 'cover',
+							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
+								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+							transition: `all ${animationTime}s ease-in-out`,
+						}}>
+						{children}
+					</div>
+			}
 		</div>
 	);
 }
 
-export default ProjectImage;
+export default ProjectItem;
