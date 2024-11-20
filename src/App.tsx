@@ -75,26 +75,26 @@ function App() {
         backgroundImage={texel1}
         headerImage={workText}
       >
-        <ProjectItem gridRow={1} gridColumn={'1 / 3'} fillType={FillType.WIDTH} disableRotation>
+        <ProjectItem gridRowSpan={1} gridColumnSpan={2} fillType={FillType.WIDTH} disableRotation>
           <div className='description'>
             <p>Broodje Kaas is not just a </p>
           </div>
         </ProjectItem>
-        <ProjectItem imageSource={door}
-          gridRow={2}
-          gridColumn={1}
-          fillType={FillType.HEIGHT} />
         <ProjectItem imageSource={blahaj}
-          gridRow={'1 / 4'}
-          gridColumn={3}
+          gridRowSpan={3}
+          gridColumnSpan={1}
+          fillType={FillType.HEIGHT} />
+        <ProjectItem imageSource={door}
+          gridRowSpan={1}
+          gridColumnSpan={1}
           fillType={FillType.HEIGHT} />
         <ProjectItem imageSource={wall}
-          gridRow={2}
-          gridColumn={2}
+          gridRowSpan={1}
+          gridColumnSpan={1}
           fillType={FillType.HEIGHT} />
         <ProjectItem imageSource={longDesk}
-          gridRow={3}
-          gridColumn={'1 / 3'}
+          gridRowSpan={1}
+          gridColumnSpan={2}
           fillType={FillType.HEIGHT} />
       </ProjectSlide >
       <p>Broodje Kaas</p>

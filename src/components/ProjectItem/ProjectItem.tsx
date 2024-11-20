@@ -8,8 +8,8 @@ export enum FillType {
 
 type Props = {
 	imageSource?: string;
-	gridRow: number | string;
-	gridColumn: number | string;
+	gridRowSpan: number;
+	gridColumnSpan: number;
 	fillType: FillType;
 	children?: React.ReactNode;
 	disableRotation?: boolean;
@@ -29,8 +29,8 @@ const isOnDesktop = () => {
 
 const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
-	gridRow,
-	gridColumn,
+	gridRowSpan,
+	gridColumnSpan,
 	fillType = FillType.WIDTH,
 	children,
 	disableRotation = false }) => {
@@ -96,11 +96,11 @@ const ProjectItem: React.FC<Props> = ({
 	}, []);
 
 	return (
-		<div className={styles.imageWrapper}
+		<div className={styles.wrapper}
 			ref={ref}
 			style={{
-				gridRow,
-				gridColumn,
+				gridRow: `span ${gridRowSpan}`,
+				gridColumn: `span ${gridColumnSpan}`,
 			}} >
 			{
 				imageSource !== '' ?
