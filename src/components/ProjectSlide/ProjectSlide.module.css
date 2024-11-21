@@ -8,11 +8,10 @@
 		
 		Something to consider is to just make it all one column.
 		*/
-	grid-template-columns: repeat(3, calc(90% / 3));
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, calc(90% / 3));
-	padding: 25px 25px;
+	padding: 25px;
 	gap: 25px;
-	width: 100%;
 	/* Accomodating for polaroid header thing */
 	height: calc(100% - 150px);
 }
