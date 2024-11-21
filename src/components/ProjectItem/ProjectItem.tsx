@@ -113,7 +113,7 @@ const ProjectItem: React.FC<Props> = ({
 						style={{
 							transform: show ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-							transition: `all ${animationTime}s ease-in-out`,
+							transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
 						}}
 					/>
 					:
@@ -121,7 +121,7 @@ const ProjectItem: React.FC<Props> = ({
 						style={{
 							transform: show ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-							transition: `all ${animationTime}s ease-in-out`,
+							transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
 						}}>
 						{children}
 					</div>
