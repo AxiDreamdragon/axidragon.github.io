@@ -33,7 +33,7 @@ const ProjectItem: React.FC<Props> = ({
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
 	const visibleRotationRef = useRef<number>(disableRotation ? 0 : Math.random() * rotationVariation - rotationVariation / 2);
-	const hiddenRotationRef = useRef<number>(15 * Math.random() * rotationVariation);
+	const hiddenRotationRef = useRef<number>(30 * (Math.random() * rotationVariation - rotationVariation / 2));
 
 	useEffect(() => {
 		if (ref.current) {
