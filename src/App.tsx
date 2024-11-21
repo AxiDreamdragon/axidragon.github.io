@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 import StartScreen from '@components/screens/StartScreen';
-import ProjectItem, { FillType } from '@/components/ProjectItem/ProjectItem';
+import ProjectItem from '@/components/ProjectItem/ProjectItem';
 
 //TODO: Probably just make a seperate screen per project to avoid this mess
 import wall from '@/assets/room/wall.png';
@@ -75,7 +75,7 @@ function App() {
         backgroundImage={texel1}
         headerImage={workText}
       >
-        <ProjectItem gridRowSpan={1} gridColumnSpan={2} fillType={FillType.WIDTH} disableRotation>
+        <ProjectItem gridRowSpan={1} gridColumnSpan={2} disableRotation>
           <div className='description'>
             <p>Broodje Kaas is a visual novel game commissioned by the Dutch National Police Force.</p>
             <p>It teaches new caretakers what to do in case of emergencies in an interactive way.</p>
@@ -85,19 +85,19 @@ function App() {
         <ProjectItem imageSource={blahaj}
           gridRowSpan={3}
           gridColumnSpan={1}
-          fillType={FillType.WIDTH} />
+        />
         <ProjectItem imageSource={door}
           gridRowSpan={1}
           gridColumnSpan={1}
-          fillType={FillType.HEIGHT} />
+        />
         <ProjectItem imageSource={wall}
           gridRowSpan={1}
           gridColumnSpan={1}
-          fillType={FillType.HEIGHT} />
+        />
         <ProjectItem imageSource={longDesk}
           gridRowSpan={1}
           gridColumnSpan={2}
-          fillType={FillType.HEIGHT} />
+        />
       </ProjectSlide >
       <p>Broodje Kaas</p>
       <p>Artkeeper</p>

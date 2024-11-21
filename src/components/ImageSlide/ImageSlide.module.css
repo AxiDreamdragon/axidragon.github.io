@@ -1,5 +1,6 @@
 .container {
 	width: 100%;
+	/* I'm probably going to have to modify the 100% height somehow */
 	height: 100%;
 	background-size: cover;
 	background-position: center;

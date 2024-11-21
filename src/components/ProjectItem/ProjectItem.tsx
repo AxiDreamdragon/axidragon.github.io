@@ -1,16 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ProjectItem.module.css';
 
-export enum FillType {
-	HEIGHT = "height",
-	WIDTH = "width",
-}
-
 type Props = {
 	imageSource?: string;
 	gridRowSpan: number;
 	gridColumnSpan: number;
-	fillType: FillType;
 	children?: React.ReactNode;
 	disableRotation?: boolean;
 }
@@ -31,7 +25,6 @@ const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
 	gridRowSpan,
 	gridColumnSpan,
-	fillType = FillType.WIDTH,
 	children,
 	disableRotation = false }) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -103,8 +96,6 @@ const ProjectItem: React.FC<Props> = ({
 				imageSource !== '' ?
 					<img src={imageSource} className={styles.projectItem}
 						style={{
-							[fillType]: '100%',
-							objectFit: 'cover',
 							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 							transition: `all ${animationTime}s ease-in-out`,
@@ -113,7 +104,6 @@ const ProjectItem: React.FC<Props> = ({
 					:
 					<div className={styles.projectItem}
 						style={{
-							[fillType]: '100%',
 							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 							transition: `all ${animationTime}s ease-in-out`,
