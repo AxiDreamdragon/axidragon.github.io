@@ -28,6 +28,7 @@ const ProjectItem: React.FC<Props> = ({
 	children,
 	disableRotation = false }) => {
 	const [isVisible, setIsVisible] = useState(false);
+	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
@@ -63,6 +64,18 @@ const ProjectItem: React.FC<Props> = ({
 		}
 	}, [ref.current]);
 
+	const onResize = () => {
+		setForceVisible(window.innerWidth < 825);
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', onResize);
+
+		return () => {
+			window.removeEventListener('resize', onResize);
+		}
+	}, []);
+
 	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
@@ -85,6 +98,8 @@ const ProjectItem: React.FC<Props> = ({
 		};
 	}, []);
 
+	const show = isVisible || forceVisible;
+
 	return (
 		<div className={styles.wrapper}
 			ref={ref}
@@ -96,7 +111,7 @@ const ProjectItem: React.FC<Props> = ({
 				imageSource !== '' ?
 					<img src={imageSource} className={styles.projectItem}
 						style={{
-							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
+							transform: show ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 							transition: `all ${animationTime}s ease-in-out`,
 						}}
@@ -104,7 +119,7 @@ const ProjectItem: React.FC<Props> = ({
 					:
 					<div className={styles.projectItem}
 						style={{
-							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
+							transform: show ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 							transition: `all ${animationTime}s ease-in-out`,
 						}}>

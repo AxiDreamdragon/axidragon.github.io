@@ -16,9 +16,11 @@
 	height: calc(100% - 150px);
 }
 
-/* @media (max-width: 825px) {
+@media (max-width: 825px) {
 	.container {
-		grid-template-columns: 1fr;
-		grid-template-rows: auto;
+		padding: 25px 10vw 25px 10vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
-} */
+}

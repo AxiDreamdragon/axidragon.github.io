@@ -8,3 +8,9 @@
 	overflow: hidden;
 	scroll-snap-align: start;
 }
+
+@media (max-width: 825px) {
+	.container {
+		overflow: visible;
+	}
+}
