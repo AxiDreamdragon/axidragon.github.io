@@ -18,3 +18,8 @@
 	color: black;
 	font-size: max(1.2vw, 2.25vh);
 }
+
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
