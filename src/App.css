@@ -14,9 +14,7 @@
 
 .description {
 	background-image: url('@/assets/polaroid.png');
-	margin: 25px;
 	padding: 25px;
 	color: black;
-	/* TODO: gotta fix this */
-	font-size: 1vw;
+	font-size: max(1.2vw, 2.25vh);
 }

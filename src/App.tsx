@@ -77,7 +77,9 @@ function App() {
       >
         <ProjectItem gridRowSpan={1} gridColumnSpan={2} fillType={FillType.WIDTH} disableRotation>
           <div className='description'>
-            <p>Broodje Kaas is not just a </p>
+            <p>Broodje Kaas is a visual novel game commissioned by the Dutch National Police Force.</p>
+            <p>It teaches new caretakers what to do in case of emergencies in an interactive way.</p>
+            <p><i>2024</i></p>
           </div>
         </ProjectItem>
         <ProjectItem imageSource={blahaj}
