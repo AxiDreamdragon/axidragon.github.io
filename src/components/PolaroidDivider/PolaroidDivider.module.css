@@ -4,5 +4,6 @@
 	color: black;
 	background-image: url('@/assets/polaroid.png');
 	background-position: center;
+	position: relative;
 	padding: 15px 0px 15px 50px;
 }
