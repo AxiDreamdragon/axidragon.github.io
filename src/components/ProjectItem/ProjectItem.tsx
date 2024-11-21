@@ -39,7 +39,7 @@ const ProjectItem: React.FC<Props> = ({
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
 	const visibleRotationRef = useRef<number>(disableRotation ? 0 : Math.random() * rotationVariation - rotationVariation / 2);
-	const hiddenRotationRef = useRef<number>(disableRotation ? 0 : 15 * Math.random() * rotationVariation);
+	const hiddenRotationRef = useRef<number>(15 * Math.random() * rotationVariation);
 
 	useEffect(() => {
 		if (ref.current) {
@@ -77,7 +77,7 @@ const ProjectItem: React.FC<Props> = ({
 			});
 		},
 			{
-				threshold: isOnDesktop() ? 1 : 0.1,
+				threshold: isOnDesktop() ? 0.8 : 0.1,
 			}
 		);
 
@@ -101,7 +101,7 @@ const ProjectItem: React.FC<Props> = ({
 			}} >
 			{
 				imageSource !== '' ?
-					<img src={imageSource} className={styles.projectImage}
+					<img src={imageSource} className={styles.projectItem}
 						style={{
 							[fillType]: '100%',
 							objectFit: 'cover',
@@ -111,10 +111,9 @@ const ProjectItem: React.FC<Props> = ({
 						}}
 					/>
 					:
-					<div
+					<div className={styles.projectItem}
 						style={{
 							[fillType]: '100%',
-							objectFit: 'cover',
 							transform: isVisible ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 							transition: `all ${animationTime}s ease-in-out`,

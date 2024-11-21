@@ -6,7 +6,7 @@
 	align-items: center;
 }
 
-.projectImage {
+.projectItem {
 	object-fit: contain;
 	box-shadow: 0 4px 17px 5px var(--shadow);
 }
