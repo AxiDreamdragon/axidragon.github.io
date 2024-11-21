@@ -14,7 +14,6 @@ type Props = {
 }
 
 const ProjectSlide: React.FC<Props> = ({ backgroundImage, headerImage, children }) => {
-	// TODO: Fix this grid formation thing. It doesn't work great on mobile, and it's not very flexible.
 	return (
 		<ImageSlide imageSource={backgroundImage}>
 			<PolaroidDivider>
