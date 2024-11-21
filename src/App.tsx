@@ -65,12 +65,40 @@ function App() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100%',
+          height: '100vh',
           width: '100%',
         }}>
           <img src={workText} style={{ width: '100%', maxWidth: 'min(70%, 500px)' }} />
         </div>
       </ImageSlide>
+      <ProjectSlide
+        backgroundImage={texel1}
+        headerImage={workText}
+      >
+        <ProjectItem gridRowSpan={1} gridColumnSpan={2} disableRotation>
+          <div className='description'>
+            <p>Broodje Kaas is a visual novel game commissioned by the Dutch National Police Force.</p>
+            <p>It teaches new caretakers what to do in case of emergencies in an interactive way.</p>
+            <p><i>2024</i></p>
+          </div>
+        </ProjectItem>
+        <ProjectItem imageSource={blahaj}
+          gridRowSpan={3}
+          gridColumnSpan={1}
+        />
+        <ProjectItem imageSource={door}
+          gridRowSpan={1}
+          gridColumnSpan={1}
+        />
+        <ProjectItem imageSource={wall}
+          gridRowSpan={1}
+          gridColumnSpan={1}
+        />
+        <ProjectItem imageSource={longDesk}
+          gridRowSpan={1}
+          gridColumnSpan={2}
+        />
+      </ProjectSlide >
       <ProjectSlide
         backgroundImage={texel1}
         headerImage={workText}

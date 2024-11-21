@@ -1,13 +1,5 @@
 .container {
 	display: grid;
-	/* TODO: Gotta fix this formatting to be more adaptable - auto rows and colums? */
-	/* If it's less than 825px wide, swap over to single column slides */
-	/* Also, all items should then fit by size. 
-		Really, they should just stay contained within the grid. 
-		There's probably a better way for that
-		
-		Something to consider is to just make it all one column.
-		*/
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, calc(90% / 3));
 	padding: 25px;
@@ -18,9 +10,10 @@
 
 @media (max-width: 825px) {
 	.container {
-		padding: 25px 10vw 25px 10vw;
+		padding: 25px 10vw 100px 10vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		background: linear-gradient(0deg, var(--shadow) 0%, transparent 15%);
 	}
 }
