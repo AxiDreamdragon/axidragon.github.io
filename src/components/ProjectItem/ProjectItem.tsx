@@ -71,7 +71,10 @@ const ProjectItem: React.FC<Props> = ({
 	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
-				setIsVisible(entry.isIntersecting);
+				if (entry.isIntersecting) {
+					setIsVisible(true);
+					observer.unobserve(entry.target);
+				}
 			});
 		},
 			{
