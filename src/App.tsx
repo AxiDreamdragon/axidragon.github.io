@@ -111,7 +111,7 @@ function App() {
         <ProjectItem gridRowSpan={1} gridColumnSpan={2} disableRotation>
           <div className='description'>
             <p>Artkeeper is a tool that tracks time spent focused on any application.</p>
-            <p>It was created to give facilitate time tracking for digital freelancers.</p>
+            <p>It was created to facilitate time tracking for digital freelancers.</p>
           </div>
         </ProjectItem>
         <ProjectItem imageSource={blahaj}
