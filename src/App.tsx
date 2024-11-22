@@ -1,11 +1,12 @@
 import './App.css';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
 import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 import StartScreen from '@components/screens/StartScreen';
 import ProjectItem from '@/components/ProjectItem/ProjectItem';
+import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
 //TODO: Probably just make a seperate screen per project to avoid this mess
 import wall from '@/assets/room/wall.png';
@@ -59,6 +60,9 @@ function App() {
 
   return (
     <div className="App">
+      {/* <FullContentDisplayer>
+        <img src={blahaj} alt="blahaj" />
+      </FullContentDisplayer> */}
       <StartScreen />
       {/* TODO: Add an intro slide. Who am I, briefly? */}
       <ImageSlide imageSource={polaroid}>
