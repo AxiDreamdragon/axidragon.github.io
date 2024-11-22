@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ProjectItem.module.css';
 import PressableContent from '../PressableContent/PressableContent';
+import onDesktop from '@/utility/onDesktop';
 
 type Props = {
 	imageSource?: string;
@@ -11,16 +12,6 @@ type Props = {
 }
 
 const rotationVariation = 7;
-
-const isOnDesktop = () => {
-	const userAgent = navigator.userAgent.toLowerCase();
-	if (/mobile|android|iphone|ipad|phone/i.test(userAgent)) {
-		return false;
-	}
-	else {
-		return true;
-	}
-}
 
 const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
@@ -84,7 +75,7 @@ const ProjectItem: React.FC<Props> = ({
 			});
 		},
 			{
-				threshold: isOnDesktop() ? 0.8 : 0.1,
+				threshold: onDesktop() ? 0.8 : 0.1,
 			}
 		);
 

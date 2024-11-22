@@ -17,6 +17,7 @@ import longDesk from '@/assets/room/longDesk.png';
 import door from '@/assets/room/door.png';
 
 import polaroid from '@/assets/polaroid.png';
+import onDesktop from './utility/onDesktop';
 
 function App() {
   useEffect(() => {
@@ -60,7 +61,8 @@ function App() {
 
   return (
     <div className="App">
-      <FullContentDisplayer />
+      {/* On phones, content is already displayed at full size */}
+      {onDesktop() && <FullContentDisplayer />}
       <StartScreen />
       {/* TODO: Add an intro slide. Who am I, briefly? */}
       <ImageSlide imageSource={polaroid}>
