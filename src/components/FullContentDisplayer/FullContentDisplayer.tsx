@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const FullContentDisplayer = () => {
 	const [show, setShow] = useState<boolean>(false);
-	const [content, setContent] = useState<React.ReactNode | null>(null);
+	const [source, setSource] = useState<string>('');
+	const [type, setType] = useState<string>('');
 
 	const handleClick = () => {
 		if (show) {
@@ -14,14 +15,8 @@ const FullContentDisplayer = () => {
 	const handleContentPressed = (event: Event) => {
 		const customEvent = event as CustomEvent;
 
-		setContent(customEvent.detail.source === 'video' ?
-			<video src={customEvent.detail.source}
-				controls
-				autoPlay
-				loop
-				muted
-				playsInline /> :
-			<img src={customEvent.detail.source} alt='content' />);
+		setSource(customEvent.detail.source);
+		setType(customEvent.detail.type);
 
 		//timeout to avoid showing the content before the click event is handled
 		setTimeout(() => {
@@ -50,7 +45,14 @@ const FullContentDisplayer = () => {
 				style={{
 					translate: show ? '0' : '0 -100vh',
 				}}>
-				{content && content}
+				{type === 'video' ?
+					<video src={source}
+						controls
+						autoPlay
+						loop
+						muted
+						playsInline /> :
+					<img src={source} alt='content' />}
 			</div>
 		</div>
 	)
