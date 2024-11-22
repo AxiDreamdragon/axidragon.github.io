@@ -23,6 +23,6 @@
 	max-height: 80%;
 	padding: 25px;
 	background-image: url('@/assets/polaroid.png');
-	filter: drop-shadow(2px 2px 2px var(--shadow));
+	filter: drop-shadow(6px 6px 1px var(--shadow));
 	transition: translate 0.5s;
 }

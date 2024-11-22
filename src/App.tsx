@@ -60,9 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <FullContentDisplayer>
-        <img src={blahaj} alt="blahaj" />
-      </FullContentDisplayer> */}
+      <FullContentDisplayer />
       <StartScreen />
       {/* TODO: Add an intro slide. Who am I, briefly? */}
       <ImageSlide imageSource={polaroid}>

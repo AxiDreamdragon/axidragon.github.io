@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ProjectItem.module.css';
+import PressableContent from '../PressableContent/PressableContent';
 
 type Props = {
 	imageSource?: string;
@@ -109,13 +110,15 @@ const ProjectItem: React.FC<Props> = ({
 			}} >
 			{
 				imageSource !== '' ?
-					<img src={imageSource} className={styles.projectItem}
-						style={{
-							transform: show ? `rotate(${visibleRotationRef.current}deg)`
-								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-							transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
-						}}
-					/>
+					<PressableContent imageSource={imageSource} videoSource={''}>
+						<img src={imageSource} className={styles.projectItem}
+							style={{
+								transform: show ? `rotate(${visibleRotationRef.current}deg)`
+									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+								transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
+							}}
+						/>
+					</PressableContent>
 					:
 					<div className={styles.projectItem}
 						style={{
