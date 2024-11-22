@@ -106,7 +106,7 @@ const ProjectItem: React.FC<Props> = ({
 							style={{
 								transform: show ? `rotate(${visibleRotationRef.current}deg)`
 									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-								transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
+								transition: `all ${animationTime}s var(--animation-curve)`,
 							}}
 						/>
 					</PressableContent>
@@ -115,7 +115,7 @@ const ProjectItem: React.FC<Props> = ({
 						style={{
 							transform: show ? `rotate(${visibleRotationRef.current}deg)`
 								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-							transition: `all ${animationTime}s cubic-bezier(0.1, 0, 0, 1)`,
+							transition: `all ${animationTime}s var(--animation-curve)`,
 						}}>
 						{children}
 					</div>

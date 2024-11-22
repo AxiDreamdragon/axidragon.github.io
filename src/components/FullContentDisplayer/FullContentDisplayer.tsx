@@ -44,9 +44,14 @@ const FullContentDisplayer = () => {
 		<div className={styles.container}
 			style={{
 				backgroundColor: show ? 'var(--shadow)' : 'transparent',
-				display: show ? 'flex' : 'none'
+				pointerEvents: show ? 'all' : 'none',
 			}}>
-			{content && content}
+			<div className={styles.content}
+				style={{
+					translate: show ? '0' : '0 -100vh',
+				}}>
+				{content && content}
+			</div>
 		</div>
 	)
 }
