@@ -3,18 +3,10 @@ import './App.css';
 import { useEffect } from 'react';
 
 import ImageSlide from '@components/ImageSlide/ImageSlide';
-import ProjectSlide from '@components/ProjectSlide/ProjectSlide';
 import StartScreen from '@components/screens/StartScreen';
-import ProjectItem from '@/components/ProjectItem/ProjectItem';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
-//TODO: Probably just make a seperate screen per project to avoid this mess
-import wall from '@/assets/room/wall.webp';
-import blahaj from '@/assets/room/blahaj.webp';
 import workText from '@/assets/text/workMarker.png';
-import texel1 from '@/assets/nature/texel1.webp';
-import longDesk from '@/assets/room/longDesk.webp';
-import door from '@/assets/room/door.webp';
 
 import polaroid from '@/assets/polaroid.webp';
 import onDesktop from './utility/onDesktop';

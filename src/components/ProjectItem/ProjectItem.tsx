@@ -111,6 +111,7 @@ const ProjectItem: React.FC<Props> = ({
 									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
 								transition: `all ${animationTime}s var(--animation-curve)`,
 							}}
+							alt='Project Image'
 						/>
 					</PressableContent>
 					:

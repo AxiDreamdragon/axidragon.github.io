@@ -19,7 +19,7 @@ const StartScreen = () => {
 				/>
 			</div>
 			<div className={styles.textContainer}>
-				<img src={axiInverted} className={styles.title} />
+				<img src={axiInverted} className={styles.title} alt='AXI' />
 				<p style={{ position: 'absolute', top: 0 }}>
 					(this website is under construction)
 				</p>
