@@ -9,14 +9,14 @@ import ProjectItem from '@/components/ProjectItem/ProjectItem';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
 //TODO: Probably just make a seperate screen per project to avoid this mess
-import wall from '@/assets/room/wall.png';
-import blahaj from '@/assets/room/blahaj.png';
+import wall from '@/assets/room/wall.webp';
+import blahaj from '@/assets/room/blahaj.webp';
 import workText from '@/assets/text/workMarker.png';
-import texel1 from '@/assets/nature/texel1.png';
-import longDesk from '@/assets/room/longDesk.png';
-import door from '@/assets/room/door.png';
+import texel1 from '@/assets/nature/texel1.webp';
+import longDesk from '@/assets/room/longDesk.webp';
+import door from '@/assets/room/door.webp';
 
-import polaroid from '@/assets/polaroid.png';
+import polaroid from '@/assets/polaroid.webp';
 import onDesktop from './utility/onDesktop';
 import PROJECTS from './data/projects';
 

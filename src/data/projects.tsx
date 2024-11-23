@@ -1,11 +1,11 @@
 import Project from "@/models/Project";
 
-import wall from '@/assets/room/wall.png';
-import blahaj from '@/assets/room/blahaj.png';
+import wall from '@/assets/room/wall.webp';
+import blahaj from '@/assets/room/blahaj.webp';
 import workText from '@/assets/text/workMarker.png';
-import texel1 from '@/assets/nature/texel1.png';
-import longDesk from '@/assets/room/longDesk.png';
-import door from '@/assets/room/door.png';
+import texel1 from '@/assets/nature/texel1.webp';
+import longDesk from '@/assets/room/longDesk.webp';
+import door from '@/assets/room/door.webp';
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
 const PROJECTS = [
