@@ -11,6 +11,7 @@ import workText from '@/assets/text/workMarker.png';
 import polaroid from '@/assets/polaroid.webp';
 import onDesktop from './utility/onDesktop';
 import PROJECTS from './data/projects';
+import IntroScreen from './components/screens/IntroScreen';
 
 function App() {
   useEffect(() => {
@@ -57,7 +58,7 @@ function App() {
       {/* On phones, content is already displayed at full size */}
       {onDesktop() && <FullContentDisplayer />}
       <StartScreen />
-      {/* TODO: Add an intro slide. Who am I, briefly? */}
+      <IntroScreen />
       <ImageSlide imageSource={polaroid}>
         <div style={{
           display: 'flex',
