@@ -2,16 +2,13 @@ import './App.css';
 
 import { useEffect } from 'react';
 
-import ImageSlide from '@components/ImageSlide/ImageSlide';
 import StartScreen from '@components/screens/StartScreen';
+import IntroScreen from '@components/screens/IntroScreen';
+import WorkIndex from '@components/screens/WorkIndex';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
-import workText from '@/assets/text/workMarker.png';
-
-import polaroid from '@/assets/polaroid.webp';
 import onDesktop from './utility/onDesktop';
 import PROJECTS from './data/projects';
-import IntroScreen from './components/screens/IntroScreen';
 
 function App() {
   useEffect(() => {
@@ -59,18 +56,7 @@ function App() {
       {onDesktop() && <FullContentDisplayer />}
       <StartScreen />
       <IntroScreen />
-      <ImageSlide imageSource={polaroid}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          width: '100%',
-        }}>
-          <img src={workText} style={{ width: '100%', maxWidth: 'min(70%, 500px)' }} />
-          {/* TODO: Add some index here, for easy navigating */}
-        </div>
-      </ImageSlide>
+      <WorkIndex />
       {PROJECTS.map((project, _) => project.getProjectSlide())}
       {/* TODO: add contact slide. also some easy way to get to it, i suppose. */}
     </div >

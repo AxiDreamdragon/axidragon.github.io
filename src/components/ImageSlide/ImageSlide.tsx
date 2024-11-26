@@ -4,11 +4,15 @@ import styles from './ImageSlide.module.css';
 type Props = {
 	imageSource: string;
 	children?: React.ReactNode;
+	id?: string;
 }
 
-const ImageSlide: React.FC<Props> = ({ imageSource, children }) => {
+const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '' }) => {
 	return (
-		<div className={styles.container} style={{ backgroundImage: `url(${imageSource})` }}>
+		<div
+			className={styles.container}
+			style={{ backgroundImage: `url(${imageSource})` }}
+			{...(id && { id })}>
 			{children}
 		</div>
 	);

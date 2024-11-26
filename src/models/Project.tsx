@@ -61,6 +61,7 @@ export default class Project {
 		return (
 			<ProjectSlide
 				key={id}
+				id={this.name}
 				backgroundImage={backgroundImage}
 				headerImage={headerImage}
 			>
