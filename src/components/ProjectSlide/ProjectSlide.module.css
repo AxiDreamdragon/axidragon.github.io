@@ -33,4 +33,8 @@
 		align-items: center;
 		background: linear-gradient(0deg, var(--shadow) 0%, transparent 15%);
 	}
+
+	.infoContainer {
+		display: none;
+	}
 }
