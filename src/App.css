@@ -16,7 +16,7 @@
 	background-image: url('@/assets/polaroid.webp');
 	padding: 25px;
 	color: black;
-	font-size: max(1.2vw, 2.25vh);
+	font-size: max(1vw, 2vh);
 }
 
 a {

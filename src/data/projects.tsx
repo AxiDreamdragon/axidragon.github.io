@@ -70,8 +70,8 @@ const PROJECTS = [
 		name: "SSHPlus",
 		description: [
 			"SSHPlus is a Chrome Extension to facilitate finding student accomodations on sshxl.nl.",
-			"Aside from advanced filters, it also remembers viewed properties and clarifies the likelihood that you'll be invited for an introduction night.",
-			"This caught the attention of SSH themselves, and they're hoping to implement these features in the future.",
+			"It remembers viewed properties, shows the likelihood that you'll be invited for an introduction night, and has various filters.",
+			"This caught the attention of SSH, and they're hoping to implement these features in the future.",
 		],
 		mediaContent: [
 			<ProjectItem imageSource={blahaj}
@@ -99,8 +99,8 @@ const PROJECTS = [
 		name: "Exersite",
 		description: [
 			"Exersite is a web app where visitors can vote for exercise that I should do.",
-			"I initially created it to counteract that I'm mostly be sitting behind a computer.",
-			"Admittedly, I don't look at it much anymore - I've got my own exercise routines that I maintain now."
+			"I initially created it to counteract that I'm mostly sitting behind a computer.",
+			"Admittedly, I don't look at it much anymore - I've got my own exercise routines that I maintain now!"
 		],
 		mediaContent: [
 			<ProjectItem imageSource={blahaj}
