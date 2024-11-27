@@ -1,0 +1,26 @@
+import ImageSlide from "../ImageSlide/ImageSlide";
+
+import texelSky from "@/assets/nature/texelSky.webp";
+
+import styles from './ContactScreen.module.css';
+import LogoLink from "../LogoLink/LogoLink";
+
+const ContactScreen = () => {
+	return (
+		<ImageSlide imageSource={texelSky} id='contact'>
+			<div className={styles.wrapper}>
+				<div className={styles.container}>
+					<p>Interested in chatting with me / working with me / hiring me?</p>
+					<p>Send me an email at:</p>
+					<p>axidreamdragon |at| gmail |dot| com</p>
+					<div className={styles.linkContainer}>
+						<LogoLink logoName={'github'} link='https://github.com/AxiDragon' />
+						<LogoLink logoName={'itch'} link='https://axidreamdragon.itch.io/' />
+					</div>
+				</div>
+			</div>
+		</ImageSlide>
+	);
+}
+
+export default ContactScreen;
