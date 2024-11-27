@@ -1,5 +1,6 @@
 import ImageSlide from "@components/ImageSlide/ImageSlide";
 import PolaroidDivider from "@components/PolaroidDivider/PolaroidDivider";
+import LogoLink from "@components/LogoLink/LogoLink";
 
 import styles from './ProjectSlide.module.css';
 
@@ -8,17 +9,36 @@ type Props = {
 	headerImage: string;
 	children?: React.ReactNode;
 	id: string;
+	year?: string;
+	githubLink?: string;
+	webLink?: string;
 	//TODO: Add an easy way to add links to the project's page, source code or playable game (if allowed/possible)
 	//TODO: Just, what info is important also? Date?
 	//I probably just want to create some 'Project' data class containing all this info, so that
 	//in the app component I can just pass an array of all projects and map them
 }
 
-const ProjectSlide: React.FC<Props> = ({ backgroundImage, headerImage, children, id = '' }) => {
+const ProjectSlide: React.FC<Props> = ({
+	backgroundImage,
+	headerImage,
+	children,
+	id = '',
+	year = '',
+	githubLink = '',
+	webLink = '' }) => {
 	return (
 		<ImageSlide imageSource={backgroundImage} id={id}>
 			<PolaroidDivider>
 				<img src={headerImage} className='polaroid-header' />
+				<div className={styles.infoContainer}>
+					{year && <p className={styles.year}>{year}</p>}
+					{(githubLink || webLink) &&
+						<div className={styles.infoContainer}>
+							{githubLink && <LogoLink logoName="github" link={githubLink} />}
+							{webLink && <LogoLink logoName="web" link={webLink} />}
+						</div>
+					}
+				</div>
 			</PolaroidDivider>
 			<div className={styles.container}>
 				{children}

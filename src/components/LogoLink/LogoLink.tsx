@@ -1,7 +1,19 @@
 const logoMap = {
-	github: require('@/assets/icons/github.png'),
-	itch: require('@/assets/icons/itch.png'),
-	web: require('@/assets/icons/web.png'),
+	github:
+	{
+		logo: require('@/assets/icons/github.png'),
+		title: 'GitHub',
+	},
+	itch:
+	{
+		logo: require('@/assets/icons/itch.png'),
+		title: 'Itch.io',
+	},
+	web:
+	{
+		logo: require('@/assets/icons/web.png'),
+		title: 'Website',
+	},
 }
 
 type LogoName = keyof typeof logoMap;
@@ -17,7 +29,7 @@ const LogoLink: React.FC<Props> = ({ logoName, link, size = 64 }) => {
 
 	return (
 		<a href={link} target='_blank' rel='noreferrer'>
-			<img src={logo} style={{ width: size }} />
+			<img src={logo.logo} style={{ width: size }} title={logo.title} />
 		</a>
 	);
 }

@@ -8,6 +8,23 @@
 	height: calc(100% - 150px);
 }
 
+.infoContainer {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	gap: 25px;
+	mix-blend-mode: multiply;
+}
+
+.year {
+	font-family: 'Caveat', cursive;
+	font-size: 48px;
+	font-weight: bold;
+	color: #b81747;
+	margin: 0;
+	padding: 0;
+}
+
 @media (max-width: 825px) {
 	.container {
 		padding: 25px 10vw 100px 10vw;

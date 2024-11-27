@@ -11,14 +11,17 @@ type ProjectParams = {
 	mediaContent: React.ReactNode[];
 	headerImage: string;
 	backgroundImage: string;
-	//year: number;
-	//webLink: string;
-	//githubLink: string;
+	year: string;
+	webLink?: string;
+	githubLink?: string;
 }
 
 export default class Project {
 	private projectSlide: React.ReactNode;
 	private name: string;
+	public year: string;
+	public webLink: string;
+	public githubLink: string;
 
 	constructor(
 		{
@@ -28,8 +31,14 @@ export default class Project {
 			mediaContent,
 			headerImage,
 			backgroundImage,
+			year,
+			webLink = '',
+			githubLink = '',
 		}: ProjectParams
 	) {
+		this.year = year;
+		this.webLink = webLink;
+		this.githubLink = githubLink;
 		this.name = name;
 
 		mediaContent.unshift(this.generateDescription(description));
@@ -64,6 +73,9 @@ export default class Project {
 				id={this.name}
 				backgroundImage={backgroundImage}
 				headerImage={headerImage}
+				year={this.year}
+				webLink={this.webLink}
+				githubLink={this.githubLink}
 			>
 				{mediaContent.map((media, index) => <Fragment key={index}>{media}</Fragment>)}
 			</ProjectSlide>

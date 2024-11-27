@@ -36,6 +36,7 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
 	}),
 	new Project({
 		id: 1,
@@ -64,6 +65,8 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2023-2024',
+		githubLink: 'https://github.com/AxiDragon/Artkeeper',
 	}),
 	new Project({
 		id: 2,
@@ -93,6 +96,8 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
+		githubLink: 'https://github.com/AxiDragon/SSHPlus',
 	}),
 	new Project({
 		id: 3,
@@ -122,6 +127,8 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
+		webLink: 'https://axidragon.github.io/exersite/',
 	}),
 	new Project({
 		id: 4,
@@ -150,6 +157,7 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
 	}),
 	new Project({
 		id: 5,
@@ -179,6 +187,9 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
+		githubLink: 'https://github.com/AxiDragon/d20-timer',
+		webLink: 'https://axidragon.github.io/d20-timer/',
 	}),
 	new Project({
 		id: 6,
@@ -208,6 +219,9 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
+		webLink: 'https://axidragon.github.io/opinions-not-people/',
+		githubLink: 'https://github.com/AxiDragon/opinions-not-people',
 	}),
 	new Project({
 		id: 7,
@@ -236,6 +250,9 @@ const PROJECTS = [
 		],
 		headerImage: workText,
 		backgroundImage: texel1,
+		year: '2024',
+		githubLink: 'https://github.com/AxiDragon/axidragon.github.io',
+		webLink: 'https://axidragon.github.io/',
 	}),
 ];
 
