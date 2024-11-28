@@ -1,23 +1,45 @@
 {
   "files": {
-    "main.css": "./static/css/main.d0fde655.css",
-    "main.js": "./static/js/main.1e1a991f.js",
+    "main.css": "./static/css/main.3b893288.css",
+    "main.js": "./static/js/main.208d95d7.js",
     "static/media/intro.mp4": "./static/media/intro.ce5294a3c86bd2f14e92.mp4",
     "static/media/blahaj.webp": "./static/media/blahaj.84020fc581d73dedcb35.webp",
+    "static/media/texel4.webp": "./static/media/texel4.182a6ccb61306fa8a495.webp",
+    "static/media/texel3.webp": "./static/media/texel3.f98236c36532446ea6a8.webp",
     "static/media/texel1.webp": "./static/media/texel1.aada57eeea51078c3acb.webp",
+    "static/media/sheets.webp": "./static/media/sheets.927ce6a4d51dc2abc608.webp",
+    "static/media/boat1.webp": "./static/media/boat1.16c206af0cee54e346f1.webp",
+    "static/media/texel2.webp": "./static/media/texel2.d10881b675cfdddb75ed.webp",
     "static/media/texelSky.webp": "./static/media/texelSky.6576eb9cbe03595b9381.webp",
     "static/media/wall.webp": "./static/media/wall.0eff5078dfca64f50d86.webp",
+    "static/media/desk.webp": "./static/media/desk.cffc54190a7e0b6ebec1.webp",
+    "static/media/gameplay.mp4": "./static/media/gameplay.acdf4ab9658a94a5050d.mp4",
+    "static/media/texel5.webp": "./static/media/texel5.993fca932237236d1e7c.webp",
+    "static/media/poster.webp": "./static/media/poster.ad87389fdd8fc11ef296.webp",
     "static/media/longDesk.webp": "./static/media/longDesk.bcdd943f67df97196054.webp",
     "static/media/door.webp": "./static/media/door.b32147525819e4e3d53e.webp",
     "static/media/polaroid.webp": "./static/media/polaroid.3ee12ced8119b2368866.webp",
     "static/media/axi.png": "./static/media/axi.8445a1e1cbd66b4a9b67.png",
-    "static/media/workMarker.png": "./static/media/workMarker.8c959be68e4520e6c188.png",
+    "static/media/gameScreenshot.webp": "./static/media/gameScreenshot.43d232c77b5a63b2c78b.webp",
+    "static/media/3d.webp": "./static/media/3d.bdb393c23582e3e1bf6d.webp",
+    "static/media/opinionsNotPeople.png": "./static/media/opinionsNotPeople.89ffafc6859520bf4728.png",
+    "static/media/exersiteManager.png": "./static/media/exersiteManager.ade63afff18b45e28449.png",
+    "static/media/web.png": "./static/media/web.97dcf9da5ace058e59d0.png",
+    "static/media/broodjeKaas.png": "./static/media/broodjeKaas.4895d2f254b02e98f797.png",
+    "static/media/itch.png": "./static/media/itch.5cfb6568e43e5f7d6f14.png",
+    "static/media/artkeeper.png": "./static/media/artkeeper.11db8c475cf9bc90ef62.png",
+    "static/media/d20Timer.png": "./static/media/d20Timer.72db04b7de4ccaa5a29b.png",
+    "static/media/github.png": "./static/media/github.d72ebcea60cb20268f8e.png",
+    "static/media/portfolio.png": "./static/media/portfolio.3c7f17587cbaa809a2bd.png",
+    "static/media/info.png": "./static/media/info.1f4bba019ac6d47ed9a6.png",
+    "static/media/exersite.png": "./static/media/exersite.779893615b985bf4d970.png",
+    "static/media/sshplus.png": "./static/media/sshplus.2afb68c20af8006e59f6.png",
     "index.html": "./index.html",
-    "main.d0fde655.css.map": "./static/css/main.d0fde655.css.map",
-    "main.1e1a991f.js.map": "./static/js/main.1e1a991f.js.map"
+    "main.3b893288.css.map": "./static/css/main.3b893288.css.map",
+    "main.208d95d7.js.map": "./static/js/main.208d95d7.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0fde655.css",
-    "static/js/main.1e1a991f.js"
+    "static/css/main.3b893288.css",
+    "static/js/main.208d95d7.js"
   ]
 }

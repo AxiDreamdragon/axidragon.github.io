@@ -1,6 +1,7 @@
 :root {
 	--shadow: rgba(53, 31, 93, 0.6);
 	--animation-curve: cubic-bezier(0.1, 0, 0, 1);
+	--in-out-animation-curve: cubic-bezier(1, 0, 0.0, 1);
 }
 
 html,
