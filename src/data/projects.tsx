@@ -8,6 +8,22 @@ import longDesk from '@/assets/room/longDesk.webp';
 import door from '@/assets/room/door.webp';
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
+import broodjeKaasText from '@/assets/text/broodjeKaas.png';
+
+import artkeeperText from '@/assets/text/artkeeper.png';
+
+import sshplusText from '@/assets/text/sshplus.png';
+
+import exersiteText from '@/assets/text/exersite.png';
+
+import exersiteManagerText from '@/assets/text/exersiteManager.png';
+
+import d20TimerText from '@/assets/text/d20Timer.png';
+
+import opinionsNotPeopleText from '@/assets/text/opinionsNotPeople.png';
+
+import portfolioText from '@/assets/text/portfolio.png';
+
 const PROJECTS = [
 	new Project({
 		id: 0,
@@ -34,7 +50,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: broodjeKaasText,
 		backgroundImage: texel1,
 		year: '2024',
 	}),
@@ -63,7 +79,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: artkeeperText,
 		backgroundImage: texel1,
 		year: '2023-2024',
 		githubLink: 'https://github.com/AxiDragon/Artkeeper',
@@ -94,7 +110,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: sshplusText,
 		backgroundImage: texel1,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/SSHPlus',
@@ -125,7 +141,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: exersiteText,
 		backgroundImage: texel1,
 		year: '2024',
 		webLink: 'https://axidragon.github.io/exersite/',
@@ -155,7 +171,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: exersiteManagerText,
 		backgroundImage: texel1,
 		year: '2024',
 	}),
@@ -185,7 +201,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: d20TimerText,
 		backgroundImage: texel1,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/d20-timer',
@@ -217,7 +233,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: opinionsNotPeopleText,
 		backgroundImage: texel1,
 		year: '2024',
 		webLink: 'https://axidragon.github.io/opinions-not-people/',
@@ -248,7 +264,7 @@ const PROJECTS = [
 				gridColumnSpan={2}
 			/>,
 		],
-		headerImage: workText,
+		headerImage: portfolioText,
 		backgroundImage: texel1,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/axidragon.github.io',

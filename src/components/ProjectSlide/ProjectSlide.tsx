@@ -14,7 +14,6 @@ type Props = {
 	webLink?: string;
 }
 
-//TODO: the ProjectSlide seems to be *just* a little too tall
 const ProjectSlide: React.FC<Props> = ({
 	backgroundImage,
 	headerImage,
@@ -26,7 +25,7 @@ const ProjectSlide: React.FC<Props> = ({
 	return (
 		<ImageSlide imageSource={backgroundImage} id={id}>
 			<PolaroidDivider>
-				<img src={headerImage} className='polaroid-header' />
+				<img src={headerImage} className='polaroid-header' alt={id} title={id} />
 				<div className={styles.infoContainer}>
 					{year && <p className={styles.year}>{year}</p>}
 					{(githubLink || webLink) &&
