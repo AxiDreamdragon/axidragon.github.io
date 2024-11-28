@@ -2,27 +2,38 @@ import Project from "@/models/Project";
 
 import wall from '@/assets/room/wall.webp';
 import blahaj from '@/assets/room/blahaj.webp';
-import workText from '@/assets/text/workMarker.png';
-import texel1 from '@/assets/nature/texel1.webp';
 import longDesk from '@/assets/room/longDesk.webp';
 import door from '@/assets/room/door.webp';
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
+//TODO: Maybe make the background pics a higher resolution
 import broodjeKaasText from '@/assets/text/broodjeKaas.png';
+import texel1 from '@/assets/nature/texel1.webp';
+import broodjeKaasPoster from '@/assets/projects/broodjeKaas/poster.webp';
+import broodjeKaasGameScreenshot from '@/assets/projects/broodjeKaas/gameScreenshot.webp';
+import broodjeKaas3d from '@/assets/projects/broodjeKaas/3d.webp';
+import broodjeKaasGameplay from '@/assets/projects/broodjeKaas/gameplay.mp4';
 
 import artkeeperText from '@/assets/text/artkeeper.png';
+import texel4 from '@/assets/nature/texel4.webp';
 
 import sshplusText from '@/assets/text/sshplus.png';
+import texel3 from '@/assets/nature/texel3.webp';
 
 import exersiteText from '@/assets/text/exersite.png';
+import sheets from '@/assets/room/sheets.webp';
 
 import exersiteManagerText from '@/assets/text/exersiteManager.png';
+import boat from '@/assets/nature/boat1.webp';
 
 import d20TimerText from '@/assets/text/d20Timer.png';
+import texel2 from '@/assets/nature/texel2.webp';
 
 import opinionsNotPeopleText from '@/assets/text/opinionsNotPeople.png';
+import texel5 from '@/assets/nature/texel5.webp';
 
 import portfolioText from '@/assets/text/portfolio.png';
+import desk from '@/assets/room/desk.webp';
 
 const PROJECTS = [
 	new Project({
@@ -31,21 +42,22 @@ const PROJECTS = [
 		description: [
 			"Broodje Kaas is a visual novel game commissioned by the Dutch National Police Force.",
 			"It teaches new caretakers what to do in case of emergencies in an interactive way.",
+			"I was responsible for the 3D art and project management, and contributed to the programming and game design."
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
+			<ProjectItem imageSource={broodjeKaasPoster}
 				gridRowSpan={3}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={door}
+			<ProjectItem imageSource={broodjeKaasGameScreenshot}
 				gridRowSpan={1}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={wall}
+			<ProjectItem videoSource={broodjeKaasGameplay}
 				gridRowSpan={1}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={longDesk}
+			<ProjectItem imageSource={broodjeKaas3d}
 				gridRowSpan={1}
 				gridColumnSpan={2}
 			/>,
@@ -80,7 +92,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: artkeeperText,
-		backgroundImage: texel1,
+		backgroundImage: texel4,
 		year: '2023-2024',
 		githubLink: 'https://github.com/AxiDragon/Artkeeper',
 	}),
@@ -111,7 +123,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: sshplusText,
-		backgroundImage: texel1,
+		backgroundImage: texel3,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/SSHPlus',
 	}),
@@ -142,7 +154,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: exersiteText,
-		backgroundImage: texel1,
+		backgroundImage: sheets,
 		year: '2024',
 		webLink: 'https://axidragon.github.io/exersite/',
 	}),
@@ -172,7 +184,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: exersiteManagerText,
-		backgroundImage: texel1,
+		backgroundImage: boat,
 		year: '2024',
 	}),
 	new Project({
@@ -202,7 +214,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: d20TimerText,
-		backgroundImage: texel1,
+		backgroundImage: texel2,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/d20-timer',
 		webLink: 'https://axidragon.github.io/d20-timer/',
@@ -234,7 +246,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: opinionsNotPeopleText,
-		backgroundImage: texel1,
+		backgroundImage: texel5,
 		year: '2024',
 		webLink: 'https://axidragon.github.io/opinions-not-people/',
 		githubLink: 'https://github.com/AxiDragon/opinions-not-people',
@@ -265,7 +277,7 @@ const PROJECTS = [
 			/>,
 		],
 		headerImage: portfolioText,
-		backgroundImage: texel1,
+		backgroundImage: desk,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/axidragon.github.io',
 		webLink: 'https://axidragon.github.io/',
