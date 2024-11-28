@@ -12,12 +12,9 @@ type Props = {
 	year?: string;
 	githubLink?: string;
 	webLink?: string;
-	//TODO: Add an easy way to add links to the project's page, source code or playable game (if allowed/possible)
-	//TODO: Just, what info is important also? Date?
-	//I probably just want to create some 'Project' data class containing all this info, so that
-	//in the app component I can just pass an array of all projects and map them
 }
 
+//TODO: the ProjectSlide seems to be *just* a little too tall
 const ProjectSlide: React.FC<Props> = ({
 	backgroundImage,
 	headerImage,

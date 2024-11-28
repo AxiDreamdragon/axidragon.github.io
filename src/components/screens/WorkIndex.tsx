@@ -24,7 +24,6 @@ const WorkIndex = () => {
 		<ImageSlide imageSource={polaroid}>
 			<div className={styles.container}>
 				<img src={workText} className={styles.workText} />
-				{/* TODO: Add some index here, for easy navigating */}
 				{PROJECTS.map((project, index) => (
 					<p
 						key={index}
