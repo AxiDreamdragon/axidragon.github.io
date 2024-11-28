@@ -241,7 +241,7 @@ const PROJECTS = [
 	}),
 	new Project({
 		id: 7,
-		name: "Portfolio",
+		name: "Portfolio Website",
 		description: [
 			"This portfolio site, is, well, a culmination of my HTML, CSS, JavaScript, TypeScript and React skills.",
 			"It especially thought me a lot about responsive web design.",
