@@ -14,6 +14,8 @@ const WorkIndex = () => {
 		PROJECTS.forEach((project, _) => {
 			projectSlides.current[project.getName()] = document.getElementById(project.getName()) as HTMLElement;
 		});
+
+		projectSlides.current['contact'] = document.getElementById('contact') as HTMLElement;
 	}, []);
 
 	const handleClick = (name: string) => {
@@ -31,8 +33,13 @@ const WorkIndex = () => {
 						className={styles.clickable}
 					>{project.getName()}</p>
 				))}
+				<br />
+				<p
+					onClick={() => handleClick('contact')}
+					className={styles.clickable}
+				>Contact</p>
 			</div>
-		</ImageSlide>
+		</ImageSlide >
 	);
 }
 

@@ -9,7 +9,7 @@
 }
 
 .workText {
-	width: min(100%, 50vh);
+	width: min(100%, 33vh);
 	max-width: min(70%, 500px);
 	margin-bottom: 2vh;
 }
