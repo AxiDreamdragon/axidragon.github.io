@@ -15,7 +15,7 @@ const WorkIndex = () => {
 			projectSlides.current[project.getName()] = document.getElementById(project.getName()) as HTMLElement;
 		});
 
-		projectSlides.current['contact'] = document.getElementById('contact') as HTMLElement;
+		projectSlides.current['Contact'] = document.getElementById('Contact') as HTMLElement;
 	}, []);
 
 	const handleClick = (name: string) => {
@@ -23,7 +23,7 @@ const WorkIndex = () => {
 	};
 
 	return (
-		<ImageSlide imageSource={polaroid}>
+		<ImageSlide imageSource={polaroid} id='WorkIndex'>
 			<div className={styles.container}>
 				<img src={workText} className={styles.workText} />
 				{PROJECTS.map((project, index) => (
@@ -35,7 +35,7 @@ const WorkIndex = () => {
 				))}
 				<br />
 				<p
-					onClick={() => handleClick('contact')}
+					onClick={() => handleClick('Contact')}
 					className={styles.clickable}
 				>Contact</p>
 			</div>

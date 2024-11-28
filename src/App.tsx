@@ -10,13 +10,14 @@ import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentD
 import onDesktop from './utility/onDesktop';
 import PROJECTS from './data/projects';
 import ContactScreen from './components/screens/ContactScreen';
+import BackToIndexPostIt from './components/BackToIndexPostIt/BackToIndexPostIt';
 
 function App() {
   useEffect(() => {
     let throttled = false;
 
     const handleScroll = (event: WheelEvent) => {
-      
+
       event.preventDefault();
       if (throttled)
         return;
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <div className="App">
+      <BackToIndexPostIt />
       {/* On phones, content is already displayed at full size */}
       {onDesktop() && <FullContentDisplayer />}
       <StartScreen />

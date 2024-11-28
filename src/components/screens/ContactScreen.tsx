@@ -7,7 +7,7 @@ import LogoLink from "../LogoLink/LogoLink";
 
 const ContactScreen = () => {
 	return (
-		<ImageSlide imageSource={texelSky} id='contact'>
+		<ImageSlide imageSource={texelSky} id='Contact'>
 			<div className={styles.wrapper}>
 				<div className={styles.container}>
 					<p>Interested in chatting with me / working with me / hiring me?</p>
