@@ -5,6 +5,7 @@ import onDesktop from '@/utility/onDesktop';
 
 type Props = {
 	imageSource?: string;
+	videoSource?: string;
 	gridRowSpan: number;
 	gridColumnSpan: number;
 	children?: React.ReactNode;
@@ -15,6 +16,7 @@ const rotationVariation = 7;
 
 const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
+	videoSource = '',
 	gridRowSpan,
 	gridColumnSpan,
 	children,
@@ -103,17 +105,29 @@ const ProjectItem: React.FC<Props> = ({
 				gridColumn: `span ${gridColumnSpan}`,
 			}} >
 			{
-				imageSource !== '' ?
-					<PressableContent imageSource={imageSource} videoSource={''}>
-						<img src={imageSource} className={styles.projectItem}
-							style={{
-								transform: show ? `rotate(${visibleRotationRef.current}deg)`
-									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-								transition: `all ${animationTime}s var(--animation-curve)`,
-							}}
-							alt='Project Image'
-						/>
-					</PressableContent>
+				imageSource || videoSource ?
+					videoSource ?
+						<PressableContent videoSource={videoSource}>
+							<video className={styles.projectItem} autoPlay loop muted
+								style={{
+									transform: show ? `rotate(${visibleRotationRef.current}deg)`
+										: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+									transition: `all ${animationTime}s var(--animation-curve)`,
+								}}>
+								<source src={videoSource} type='video/mp4' />
+							</video>
+						</PressableContent>
+						:
+						<PressableContent imageSource={imageSource}>
+							<img src={imageSource} className={styles.projectItem}
+								style={{
+									transform: show ? `rotate(${visibleRotationRef.current}deg)`
+										: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+									transition: `all ${animationTime}s var(--animation-curve)`,
+								}}
+								alt='Project'
+							/>
+						</PressableContent>
 					:
 					<div className={styles.projectItem}
 						style={{
@@ -124,7 +138,7 @@ const ProjectItem: React.FC<Props> = ({
 						{children}
 					</div>
 			}
-		</div>
+		</div >
 	);
 }
 

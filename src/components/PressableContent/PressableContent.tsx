@@ -23,6 +23,7 @@ const PressableContent = ({ children, videoSource = '', imageSource = '' }: Prop
 		<div
 			onClick={handleClick}
 			className={styles.container}
+			title='Click to view full size'
 		>
 			{children}
 		</div>
