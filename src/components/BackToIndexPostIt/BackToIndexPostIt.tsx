@@ -1,16 +1,42 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './BackToIndexPostIt.module.css';
 
 const BackToIndexPostIt = () => {
 	const workIndex = useRef<HTMLElement>(document.getElementById('WorkIndex') as HTMLElement);
+	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
 		workIndex.current = document.getElementById('WorkIndex') as HTMLElement;
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				setVisible(entry.boundingClientRect.top < 0 && !entry.isIntersecting);
+			},
+			{
+				threshold: 0.1,
+			}
+		);
+
+		if (workIndex.current) {
+			observer.observe(workIndex.current);
+		}
+
+		return () => {
+			if (workIndex.current) {
+				observer.unobserve(workIndex.current);
+			}
+		};
 	}, []);
 
+
+
+	//TODO: Check when to show the post it
 	return (
-		<div className={styles.postIt} onClick={() => workIndex.current.scrollIntoView({ behavior: 'smooth' })}>
-			<img src={require('@/assets/icons/web.png')} className={styles.postItImage} />
+		<div
+			className={styles.postIt}
+			onClick={() => workIndex.current.scrollIntoView({ behavior: 'smooth' })}
+			style={{ translate: visible ? '0 0' : '128px 128px' }}>
+			<img src={require('@/assets/icons/info.png')} className={styles.postItImage} />
 		</div >
 	);
 }

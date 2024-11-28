@@ -10,7 +10,7 @@
 	background-size: cover;
 	filter: drop-shadow(0 0 2px var(--shadow));
 	transform: skew(-5deg, -5deg);
-	transition: all 0.3s var(--animation-curve);
+	transition: all 0.3s var(--in-out-animation-curve);
 }
 
 .postItImage {

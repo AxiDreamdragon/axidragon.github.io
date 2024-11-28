@@ -1,9 +1,10 @@
-import polaroid from '@/assets/polaroid.webp';
-import workText from '@/assets/text/workMarker.png';
 import ImageSlide from '../ImageSlide/ImageSlide';
 import PROJECTS from '@/data/projects';
 import styles from './WorkIndex.module.css';
 import { useEffect, useRef } from 'react';
+
+import polaroid from '@/assets/polaroid.webp';
+import infoIcon from '@/assets/icons/info.png';
 
 type ProjectSlides = { [key: string]: HTMLElement };
 
@@ -25,7 +26,7 @@ const WorkIndex = () => {
 	return (
 		<ImageSlide imageSource={polaroid} id='WorkIndex'>
 			<div className={styles.container}>
-				<img src={workText} className={styles.workText} />
+				<img src={infoIcon} className={styles.infoIcon} />
 				{PROJECTS.map((project, index) => (
 					<p
 						key={index}

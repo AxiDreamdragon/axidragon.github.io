@@ -8,15 +8,15 @@
 	font-size: min(16px, calc(1vw + 2vh));
 }
 
-.workText {
-	width: min(100%, 33vh);
-	max-width: min(70%, 500px);
+.infoIcon {
+	width: 25%;
+	max-width: 128px;
 	margin-bottom: 2vh;
 }
 
 .clickable {
 	cursor: pointer;
-	color: #4c2f3a;
+	color: #7a3433;
 	text-decoration: underline;
 	text-underline-offset: 0.3em;
 	text-decoration-thickness: 0.1em;
