@@ -1,9 +1,6 @@
 import Project from "@/models/Project";
 
-import wall from '@/assets/room/wall.webp';
-import blahaj from '@/assets/room/blahaj.webp';
 import longDesk from '@/assets/room/longDesk.webp';
-import door from '@/assets/room/door.webp';
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
 //TODO: Maybe make the background pics a higher resolution
@@ -50,6 +47,8 @@ import opinionsNotPeopleReveal from '@/assets/projects/opinionsNotPeople/reveal.
 
 import portfolioText from '@/assets/text/portfolio.png';
 import desk from '@/assets/room/desk.webp';
+import portfolioPhone from '@/assets/projects/portfolio/phone.mp4';
+import portfolioDesktop from '@/assets/projects/portfolio/desktop.mp4';
 
 const PROJECTS = [
 	new Project({
@@ -243,20 +242,12 @@ const PROJECTS = [
 			"It especially thought me a lot about responsive web design.",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
+			<ProjectItem videoSource={portfolioPhone}
 				gridRowSpan={3}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={longDesk}
-				gridRowSpan={1}
+			<ProjectItem videoSource={portfolioDesktop}
+				gridRowSpan={2}
 				gridColumnSpan={2}
 			/>,
 		],
