@@ -36,9 +36,17 @@ import exersiteManagerDemo from '@/assets/projects/exersiteManager/demo.mp4';
 
 import d20TimerText from '@/assets/text/d20Timer.png';
 import texel2 from '@/assets/nature/texel2.webp';
+import d20TimerDemo from '@/assets/projects/d20Timer/demo.mp4';
+import d20TimerDice from '@/assets/projects/d20Timer/dice.mp4';
+import d20TimerSettings from '@/assets/projects/d20Timer/settings.webp';
+import d20TimerStatistics from '@/assets/projects/d20Timer/statistics.webp';
 
 import opinionsNotPeopleText from '@/assets/text/opinionsNotPeople.png';
 import texel5 from '@/assets/nature/texel5.webp';
+import opinionsNotPeopleIntro from '@/assets/projects/opinionsNotPeople/intro.mp4';
+import opinionsNotPeopleInterrogation from '@/assets/projects/opinionsNotPeople/interrogation.mp4';
+import opinionsNotPeopleDrag from '@/assets/projects/opinionsNotPeople/drag.mp4';
+import opinionsNotPeopleReveal from '@/assets/projects/opinionsNotPeople/reveal.mp4';
 
 import portfolioText from '@/assets/text/portfolio.png';
 import desk from '@/assets/room/desk.webp';
@@ -79,7 +87,7 @@ const PROJECTS = [
 		name: "Artkeeper",
 		description: [
 			"Artkeeper is a tool that tracks time spent focused on any application.",
-			"It was created to facilitate time tracking for digital freelancers.",
+			"I created it to facilitate time tracking for digital freelancers.",
 		],
 		mediaContent: [
 			<ProjectItem imageSource={artkeeperLongScreenshot}
@@ -151,7 +159,7 @@ const PROJECTS = [
 		name: "Exersite Manager",
 		description: [
 			"Exersite Manager is a JavaFX app for the Exersite web app to easily modify the exercise counts.",
-			"It was mainly created for me to learn Java - modifying the counts wasn't really an issue to begin with.",
+			"I mainly created it to learn Java - modifying the counts wasn't really an issue to begin with.",
 		],
 		mediaContent: [
 			<ProjectItem videoSource={exersiteManagerDemo}
@@ -172,21 +180,21 @@ const PROJECTS = [
 			"I wanted to incorporate that random element in a more productive context, too!",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
-				gridRowSpan={3}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={door}
+			<ProjectItem videoSource={d20TimerDice}
 				gridRowSpan={1}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={wall}
+			<ProjectItem imageSource={d20TimerStatistics}
 				gridRowSpan={1}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={longDesk}
-				gridRowSpan={1}
+			<ProjectItem videoSource={d20TimerDemo}
+				gridRowSpan={2}
 				gridColumnSpan={2}
+			/>,
+			<ProjectItem imageSource={d20TimerSettings}
+				gridRowSpan={1}
+				gridColumnSpan={1}
 			/>,
 		],
 		headerImage: d20TimerText,
@@ -204,21 +212,21 @@ const PROJECTS = [
 			"It is currently still a work-in-progress. It should be finished by January 2025.",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
-				gridRowSpan={3}
+			<ProjectItem videoSource={opinionsNotPeopleIntro}
+				gridRowSpan={2}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
+			<ProjectItem videoSource={opinionsNotPeopleInterrogation}
+				gridRowSpan={2}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
+			<ProjectItem videoSource={opinionsNotPeopleDrag}
+				gridRowSpan={2}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={longDesk}
+			<ProjectItem videoSource={opinionsNotPeopleReveal}
 				gridRowSpan={1}
-				gridColumnSpan={2}
+				gridColumnSpan={1}
 			/>,
 		],
 		headerImage: opinionsNotPeopleText,
