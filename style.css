@@ -16,6 +16,7 @@ body {
 	bottom: 0;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	background-color: #e4c1ac;
 }
 
 body::-webkit-scrollbar {
