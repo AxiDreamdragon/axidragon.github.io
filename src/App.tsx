@@ -7,7 +7,7 @@ import IntroScreen from '@components/screens/IntroScreen';
 import WorkIndex from '@components/screens/WorkIndex';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
-import onDesktop from './utility/onDesktop';
+import { onDesktop, onFireFox } from './utility/userInfo';
 import PROJECTS from './data/projects';
 import ContactScreen from './components/screens/ContactScreen';
 import BackToIndexPostIt from './components/BackToIndexPostIt/BackToIndexPostIt';
@@ -17,8 +17,12 @@ function App() {
     let throttled = false;
 
     const handleScroll = (event: WheelEvent) => {
+      if (onFireFox()) {
+        return;
+      }
 
       event.preventDefault();
+
       if (throttled)
         return;
 

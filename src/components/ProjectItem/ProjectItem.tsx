@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ProjectItem.module.css';
 import PressableContent from '../PressableContent/PressableContent';
-import onDesktop from '@/utility/onDesktop';
+import { onDesktop } from '@/utility/userInfo';
 
 type Props = {
 	imageSource?: string;
