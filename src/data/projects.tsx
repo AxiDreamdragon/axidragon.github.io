@@ -32,6 +32,7 @@ import exersiteDemo from '@/assets/projects/exersite/demo.mp4';
 
 import exersiteManagerText from '@/assets/text/exersiteManager.png';
 import boat from '@/assets/nature/boat1.webp';
+import exersiteManagerDemo from '@/assets/projects/exersiteManager/demo.mp4';
 
 import d20TimerText from '@/assets/text/d20Timer.png';
 import texel2 from '@/assets/nature/texel2.webp';
@@ -153,20 +154,8 @@ const PROJECTS = [
 			"It was mainly created for me to learn Java - modifying the counts wasn't really an issue to begin with.",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
-				gridRowSpan={3}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={longDesk}
-				gridRowSpan={1}
+			<ProjectItem videoSource={exersiteManagerDemo}
+				gridRowSpan={2}
 				gridColumnSpan={2}
 			/>,
 		],
