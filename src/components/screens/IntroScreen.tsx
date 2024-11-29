@@ -10,7 +10,8 @@ function IntroScreen() {
 		<ImageSlide imageSource={background}>
 			<div className={styles.wrapper}>
 				<div className={styles.container}>
-					<p>Hi! I'm Axi!</p>
+					<p>Hi! I'm axi*! The asterisk doesn't actually mean anything.
+						It was based on 'GOLF le FLEUR*' - I thought the asterisk looked neat, so I stole it for myself.</p>
 					<p>A couple years ago, I started out as a Game Artist
 						at the University of Arts Utrecht.</p>
 					<p>Since then, I've gotten in touch with coding in programs such as Processing and Unity,
