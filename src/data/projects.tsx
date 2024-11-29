@@ -16,9 +16,15 @@ import broodjeKaasGameplay from '@/assets/projects/broodjeKaas/gameplay.mp4';
 
 import artkeeperText from '@/assets/text/artkeeper.png';
 import texel4 from '@/assets/nature/texel4.webp';
+import artkeeperLongScreenshot from '@/assets/projects/artkeeper/longScreenshot.webp';
+import artkeeperDemo from '@/assets/projects/artkeeper/demo.mp4';
 
 import sshplusText from '@/assets/text/sshplus.png';
 import texel3 from '@/assets/nature/texel3.webp';
+import sshplusHighPosition from '@/assets/projects/sshplus/highPosition.webp';
+import sshplusLowPositionUnwanted from '@/assets/projects/sshplus/lowPositionUnwanted.webp';
+import sshplusSeen from '@/assets/projects/sshplus/seen.webp';
+import sshplusSettings from '@/assets/projects/sshplus/settings.mp4';
 
 import exersiteText from '@/assets/text/exersite.png';
 import sheets from '@/assets/room/sheets.webp';
@@ -74,20 +80,12 @@ const PROJECTS = [
 			"It was created to facilitate time tracking for digital freelancers.",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
+			<ProjectItem imageSource={artkeeperLongScreenshot}
 				gridRowSpan={3}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={longDesk}
-				gridRowSpan={1}
+			<ProjectItem videoSource={artkeeperDemo}
+				gridRowSpan={2}
 				gridColumnSpan={2}
 			/>,
 		],
@@ -105,21 +103,21 @@ const PROJECTS = [
 			"This caught the attention of SSH, and they're hoping to implement these features in the future.",
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
+			<ProjectItem videoSource={sshplusSettings}
 				gridRowSpan={3}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={longDesk}
+			<ProjectItem imageSource={sshplusSeen}
 				gridRowSpan={1}
 				gridColumnSpan={2}
+			/>,
+			<ProjectItem imageSource={sshplusHighPosition}
+				gridRowSpan={1}
+				gridColumnSpan={1}
+			/>,
+			<ProjectItem imageSource={sshplusLowPositionUnwanted}
+				gridRowSpan={1}
+				gridColumnSpan={1}
 			/>,
 		],
 		headerImage: sshplusText,
