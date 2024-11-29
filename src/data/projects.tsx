@@ -1,6 +1,5 @@
 import Project from "@/models/Project";
 
-import longDesk from '@/assets/room/longDesk.webp';
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
 //TODO: Maybe make the background pics a higher resolution
