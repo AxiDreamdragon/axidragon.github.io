@@ -28,6 +28,7 @@ import sshplusSettings from '@/assets/projects/sshplus/settings.mp4';
 
 import exersiteText from '@/assets/text/exersite.png';
 import sheets from '@/assets/room/sheets.webp';
+import exersiteDemo from '@/assets/projects/exersite/demo.mp4';
 
 import exersiteManagerText from '@/assets/text/exersiteManager.png';
 import boat from '@/assets/nature/boat1.webp';
@@ -134,20 +135,8 @@ const PROJECTS = [
 			"Admittedly, I don't look at it much anymore - I've got my own exercise routines that I maintain now!"
 		],
 		mediaContent: [
-			<ProjectItem imageSource={blahaj}
-				gridRowSpan={3}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={door}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={wall}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={longDesk}
-				gridRowSpan={1}
+			<ProjectItem videoSource={exersiteDemo}
+				gridRowSpan={2}
 				gridColumnSpan={2}
 			/>,
 		],
