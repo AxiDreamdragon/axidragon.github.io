@@ -5,7 +5,7 @@
 	align-items: center;
 	height: 100vh;
 	width: 100%;
-	font-size: min(16px, calc(1vw + 2vh));
+	font-size: min(14px, calc(0.8vw + 1vh));
 }
 
 .infoIcon {
@@ -25,5 +25,7 @@
 
 .clickable:hover {
 	text-underline-offset: 0.5em;
+	text-decoration-thickness: 1em;
+	scale: 1.1;
 	font-weight: bold;
 }
