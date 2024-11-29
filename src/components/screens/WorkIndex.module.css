@@ -26,6 +26,6 @@
 .clickable:hover {
 	text-underline-offset: 0.5em;
 	text-decoration-thickness: 1em;
-	scale: 1.1;
+	scale: 1.25;
 	font-weight: bold;
 }
