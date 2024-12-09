@@ -238,7 +238,7 @@ const PROJECTS = [
 		name: "Portfolio Website",
 		description: [
 			"This portfolio site, is, well, a culmination of my HTML, CSS, JavaScript, TypeScript and React skills.",
-			"It especially thought me a lot about responsive web design.",
+			"It especially taught me a lot about responsive web design.",
 		],
 		mediaContent: [
 			<ProjectItem videoSource={portfolioPhone}
