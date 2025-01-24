@@ -1,6 +1,6 @@
 import ImageSlide from "../ImageSlide/ImageSlide";
 
-import texelSky from "@/assets/nature/texelSky.webp";
+import texelSky from "@/assets/nature/texel-sky.webp";
 
 import styles from './ContactScreen.module.css';
 import LogoLink from "../LogoLink/LogoLink";

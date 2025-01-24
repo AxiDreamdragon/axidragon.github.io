@@ -3,22 +3,22 @@ import Project from "@/models/Project";
 import ProjectItem from "@/components/ProjectItem/ProjectItem";
 
 //TODO: Maybe make the background pics a higher resolution
-import broodjeKaasText from '@/assets/text/broodjeKaas.png';
+import broodjeKaasText from '@/assets/text/broodje-kaas.png';
 import texel1 from '@/assets/nature/texel1.webp';
 import broodjeKaasPoster from '@/assets/projects/broodjeKaas/poster.webp';
-import broodjeKaasGameScreenshot from '@/assets/projects/broodjeKaas/gameScreenshot.webp';
+import broodjeKaasGameScreenshot from '@/assets/projects/broodjeKaas/game-screenshot.webp';
 import broodjeKaas3d from '@/assets/projects/broodjeKaas/3d.webp';
 import broodjeKaasGameplay from '@/assets/projects/broodjeKaas/gameplay.mp4';
 
 import artkeeperText from '@/assets/text/artkeeper.png';
 import texel4 from '@/assets/nature/texel4.webp';
-import artkeeperLongScreenshot from '@/assets/projects/artkeeper/longScreenshot.webp';
+import artkeeperLongScreenshot from '@/assets/projects/artkeeper/long-screenshot.webp';
 import artkeeperDemo from '@/assets/projects/artkeeper/demo.mp4';
 
 import sshplusText from '@/assets/text/sshplus.png';
 import texel3 from '@/assets/nature/texel3.webp';
-import sshplusHighPosition from '@/assets/projects/sshplus/highPosition.webp';
-import sshplusLowPositionUnwanted from '@/assets/projects/sshplus/lowPositionUnwanted.webp';
+import sshplusHighPosition from '@/assets/projects/sshplus/high-position.webp';
+import sshplusLowPositionUnwanted from '@/assets/projects/sshplus/low-position-unwanted.webp';
 import sshplusSeen from '@/assets/projects/sshplus/seen.webp';
 import sshplusSettings from '@/assets/projects/sshplus/settings.mp4';
 
@@ -26,7 +26,7 @@ import exersiteText from '@/assets/text/exersite.png';
 import sheets from '@/assets/room/sheets.webp';
 import exersiteDemo from '@/assets/projects/exersite/demo.mp4';
 
-import exersiteManagerText from '@/assets/text/exersiteManager.png';
+import exersiteManagerText from '@/assets/text/exersite-manager.png';
 import boat from '@/assets/nature/boat1.webp';
 import exersiteManagerDemo from '@/assets/projects/exersiteManager/demo.mp4';
 

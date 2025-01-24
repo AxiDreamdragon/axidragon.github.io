@@ -1,6 +1,6 @@
 import ImageSlide from "../ImageSlide/ImageSlide";
 
-import background from '@/assets/nature/texelSky.webp';
+import background from '@/assets/nature/texel-sky.webp';
 import axi from '@/assets/axi.png';
 
 import styles from './IntroScreen.module.css';
