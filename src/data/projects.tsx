@@ -37,12 +37,12 @@ import d20TimerDice from '@/assets/projects/d20Timer/dice.mp4';
 import d20TimerSettings from '@/assets/projects/d20Timer/settings.webp';
 import d20TimerStatistics from '@/assets/projects/d20Timer/statistics.webp';
 
-import opinionsNotPeopleText from '@/assets/text/opinionsNotPeople.png';
+import outgroupOdysseyText from '@/assets/text/outgroup-odyssey.png';
 import texel5 from '@/assets/nature/texel5.webp';
-import opinionsNotPeopleIntro from '@/assets/projects/opinionsNotPeople/intro.mp4';
-import opinionsNotPeopleInterrogation from '@/assets/projects/opinionsNotPeople/interrogation.mp4';
-import opinionsNotPeopleDrag from '@/assets/projects/opinionsNotPeople/drag.mp4';
-import opinionsNotPeopleReveal from '@/assets/projects/opinionsNotPeople/reveal.mp4';
+import peopleNotOpinionsIntro from '@/assets/projects/outgroupOdyssey/pno-intro.mp4';
+import opinionsNotPeopleInterrogation from '@/assets/projects/outgroupOdyssey/onp-interrogation.mp4';
+import outgroupOdysseyOutgroupGraph from '@/assets/projects/outgroupOdyssey/outgroup.mp4';
+import outgroupOdysseyBiasChart from '@/assets/projects/outgroupOdyssey/bias.mp4';
 
 import portfolioText from '@/assets/text/portfolio.png';
 import desk from '@/assets/room/desk.webp';
@@ -203,35 +203,35 @@ const PROJECTS = [
 	}),
 	new Project({
 		id: 6,
-		name: "Opinions not People",
+		name: "Outgroup Odyssey",
 		description: [
-			<p>Opinions not People is a web app for phones to
-				reduce <a href='https://en.wikipedia.org/wiki/Out-group_homogeneity' target='blank'>out-group homogeneity bias</a>.</p>,
-			"It is currently still a work-in-progress. It should be finished by January 2025.",
+			<p>Outgroup Odyssey is a web app for phones about <a href='https://en.wikipedia.org/wiki/Out-group_homogeneity' target='blank'>outgroup homogeneity bias</a>.
+				and what can be done to combat it.</p>,
+			"I wanted to explore the potential of applied games in web development. In its process, I learned a lot about prototyping in a web context.",
 		],
 		mediaContent: [
-			<ProjectItem videoSource={opinionsNotPeopleIntro}
-				gridRowSpan={2}
-				gridColumnSpan={1}
-			/>,
 			<ProjectItem videoSource={opinionsNotPeopleInterrogation}
 				gridRowSpan={2}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem videoSource={opinionsNotPeopleDrag}
+			<ProjectItem videoSource={outgroupOdysseyBiasChart}
 				gridRowSpan={2}
 				gridColumnSpan={1}
 			/>,
-			<ProjectItem videoSource={opinionsNotPeopleReveal}
+			<ProjectItem videoSource={outgroupOdysseyOutgroupGraph}
+				gridRowSpan={2}
+				gridColumnSpan={1}
+			/>,
+			<ProjectItem videoSource={peopleNotOpinionsIntro}
 				gridRowSpan={1}
 				gridColumnSpan={1}
 			/>,
 		],
-		headerImage: opinionsNotPeopleText,
+		headerImage: outgroupOdysseyText,
 		backgroundImage: texel5,
-		year: '2024',
-		webLink: 'https://axidragon.github.io/opinions-not-people/',
-		githubLink: 'https://github.com/AxiDragon/opinions-not-people',
+		year: '2025',
+		webLink: 'https://axidragon.github.io/outgroup-odyssey/',
+		githubLink: 'https://github.com/AxiDragon/outgroup-odyssey',
 	}),
 	new Project({
 		id: 7,
