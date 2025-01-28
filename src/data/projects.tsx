@@ -49,6 +49,16 @@ import desk from '@/assets/room/desk.webp';
 import portfolioPhone from '@/assets/projects/portfolio/phone.mp4';
 import portfolioDesktop from '@/assets/projects/portfolio/desktop.mp4';
 
+import gamesText from '@/assets/text/games.png';
+import cubismWithASideOfThorns from '@/assets/projects/games/cubism-with-a-side-of-thorns.mp4';
+import dolphinAndFeathersInc from '@/assets/projects/games/dolphin-and-feathers-inc.mp4';
+import flickflock from '@/assets/projects/games/flickflock.mp4';
+import gunbloem from '@/assets/projects/games/gunbloem.mp4';
+import shawawofi from '@/assets/projects/games/shawawofi.mp4';
+import superBeanIsle from '@/assets/projects/games/super-bean-isle.mp4';
+import wiwi from '@/assets/projects/games/wiwi.mp4';
+
+
 const PROJECTS = [
 	new Project({
 		id: 0,
@@ -222,6 +232,28 @@ const PROJECTS = [
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/axidragon.github.io',
 		webLink: 'https://axidragon.github.io/',
+	}),
+	new Project({
+		id: 8,
+		name: "Games",
+		description: [
+			"I can't deny that making games was the start of my programming journey.",
+			"Making these games taught me a lot about programming in general, but also what I truly wanted to do with my life.",
+			"Although I am no longer making games, this phase was a crucial part of my life which I'm grateful for, and it would feel wrong to leave them out!",
+		],
+		mediaContent: [
+			<ProjectItem videoSource={superBeanIsle} />,
+			<ProjectItem videoSource={gunbloem} />,
+			<ProjectItem videoSource={cubismWithASideOfThorns} />,
+			<ProjectItem videoSource={shawawofi} />,
+			<ProjectItem videoSource={flickflock} />,
+			<ProjectItem videoSource={dolphinAndFeathersInc} />,
+			<ProjectItem videoSource={wiwi} />,
+		],
+		headerImage: gamesText,
+		backgroundImage: texel1,
+		year: '2022-2024',
+		webLink: 'https://axidreamdragon.itch.io/',
 	}),
 ];
 
