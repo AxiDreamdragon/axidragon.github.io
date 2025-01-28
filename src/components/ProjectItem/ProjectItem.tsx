@@ -6,8 +6,8 @@ import { onDesktop } from '@/utility/userInfo';
 type Props = {
 	imageSource?: string;
 	videoSource?: string;
-	gridRowSpan: number;
-	gridColumnSpan: number;
+	gridRowSpan?: number;
+	gridColumnSpan?: number;
 	children?: React.ReactNode;
 	disableRotation?: boolean;
 }
@@ -17,8 +17,8 @@ const rotationVariation = 7;
 const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
 	videoSource = '',
-	gridRowSpan,
-	gridColumnSpan,
+	gridRowSpan = 1,
+	gridColumnSpan = 1,
 	children,
 	disableRotation = false }) => {
 	const [isVisible, setIsVisible] = useState(false);

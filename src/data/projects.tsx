@@ -61,18 +61,10 @@ const PROJECTS = [
 		mediaContent: [
 			<ProjectItem imageSource={broodjeKaasPoster}
 				gridRowSpan={3}
-				gridColumnSpan={1}
 			/>,
-			<ProjectItem imageSource={broodjeKaasGameScreenshot}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem videoSource={broodjeKaasGameplay}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
+			<ProjectItem imageSource={broodjeKaasGameScreenshot} />,
+			<ProjectItem videoSource={broodjeKaasGameplay} />,
 			<ProjectItem imageSource={broodjeKaas3d}
-				gridRowSpan={1}
 				gridColumnSpan={2}
 			/>,
 		],
@@ -90,7 +82,6 @@ const PROJECTS = [
 		mediaContent: [
 			<ProjectItem imageSource={artkeeperLongScreenshot}
 				gridRowSpan={3}
-				gridColumnSpan={1}
 			/>,
 			<ProjectItem videoSource={artkeeperDemo}
 				gridRowSpan={2}
@@ -113,20 +104,12 @@ const PROJECTS = [
 		mediaContent: [
 			<ProjectItem videoSource={sshplusSettings}
 				gridRowSpan={3}
-				gridColumnSpan={1}
 			/>,
 			<ProjectItem imageSource={sshplusSeen}
-				gridRowSpan={1}
 				gridColumnSpan={2}
 			/>,
-			<ProjectItem imageSource={sshplusHighPosition}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={sshplusLowPositionUnwanted}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
+			<ProjectItem imageSource={sshplusHighPosition} />,
+			<ProjectItem imageSource={sshplusLowPositionUnwanted} />,
 		],
 		headerImage: sshplusText,
 		backgroundImage: texel3,
@@ -178,22 +161,13 @@ const PROJECTS = [
 			"I wanted to incorporate that random element in a more productive context, too!",
 		],
 		mediaContent: [
-			<ProjectItem videoSource={d20TimerDice}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
-			<ProjectItem imageSource={d20TimerStatistics}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
+			<ProjectItem videoSource={d20TimerDice} />,
+			<ProjectItem imageSource={d20TimerStatistics} />,
 			<ProjectItem videoSource={d20TimerDemo}
 				gridRowSpan={2}
 				gridColumnSpan={2}
 			/>,
-			<ProjectItem imageSource={d20TimerSettings}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
+			<ProjectItem imageSource={d20TimerSettings} />,
 		],
 		headerImage: d20TimerText,
 		backgroundImage: texel2,
@@ -212,20 +186,14 @@ const PROJECTS = [
 		mediaContent: [
 			<ProjectItem videoSource={opinionsNotPeopleInterrogation}
 				gridRowSpan={2}
-				gridColumnSpan={1}
 			/>,
 			<ProjectItem videoSource={outgroupOdysseyBiasChart}
 				gridRowSpan={2}
-				gridColumnSpan={1}
 			/>,
 			<ProjectItem videoSource={outgroupOdysseyOutgroupGraph}
 				gridRowSpan={2}
-				gridColumnSpan={1}
 			/>,
-			<ProjectItem videoSource={peopleNotOpinionsIntro}
-				gridRowSpan={1}
-				gridColumnSpan={1}
-			/>,
+			<ProjectItem videoSource={peopleNotOpinionsIntro} />,
 		],
 		headerImage: outgroupOdysseyText,
 		backgroundImage: texel5,
@@ -243,7 +211,6 @@ const PROJECTS = [
 		mediaContent: [
 			<ProjectItem videoSource={portfolioPhone}
 				gridRowSpan={3}
-				gridColumnSpan={1}
 			/>,
 			<ProjectItem videoSource={portfolioDesktop}
 				gridRowSpan={2}
