@@ -58,6 +58,7 @@ import shawawofi from '@/assets/projects/games/shawawofi.mp4';
 import superBeanIsle from '@/assets/projects/games/super-bean-isle.mp4';
 import wiwi from '@/assets/projects/games/wiwi.mp4';
 
+const DOMAIN = 'https://www.axidreamdragon.com/';
 
 const PROJECTS = [
 	new Project({
@@ -143,7 +144,7 @@ const PROJECTS = [
 		headerImage: exersiteText,
 		backgroundImage: sheets,
 		year: '2024',
-		webLink: 'https://axidragon.github.io/exersite/',
+		webLink: DOMAIN + 'exersite/',
 	}),
 	new Project({
 		id: 4,
@@ -183,7 +184,7 @@ const PROJECTS = [
 		backgroundImage: texel2,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/d20-timer',
-		webLink: 'https://axidragon.github.io/d20-timer/',
+		webLink: DOMAIN + 'd20-timer/',
 	}),
 	new Project({
 		id: 6,
@@ -208,7 +209,7 @@ const PROJECTS = [
 		headerImage: outgroupOdysseyText,
 		backgroundImage: texel5,
 		year: '2025',
-		webLink: 'https://axidragon.github.io/outgroup-odyssey/',
+		webLink: DOMAIN + 'outgroup-odyssey/',
 		githubLink: 'https://github.com/AxiDragon/outgroup-odyssey',
 	}),
 	new Project({
@@ -231,7 +232,7 @@ const PROJECTS = [
 		backgroundImage: desk,
 		year: '2024',
 		githubLink: 'https://github.com/AxiDragon/axidragon.github.io',
-		webLink: 'https://axidragon.github.io/',
+		webLink: DOMAIN + '',
 	}),
 	new Project({
 		id: 8,
