@@ -11,6 +11,9 @@ import { onDesktop, onFireFox } from './utility/userInfo';
 import PROJECTS from './data/projects';
 import ContactScreen from './components/screens/ContactScreen';
 import BackToIndexPostIt from './components/BackToIndexPostIt/BackToIndexPostIt';
+import SnippetSlide from './components/ProjectSlide/SnippetSlide';
+
+import texel1 from './assets/nature/texel1.webp';
 
 function App() {
   useEffect(() => {
@@ -72,6 +75,7 @@ function App() {
       <StartScreen />
       <IntroScreen />
       <WorkIndex />
+      <SnippetSlide backgroundImage={texel1} />
       {PROJECTS.map((project, _) => project.getProjectSlide())}
       <ContactScreen />
     </div >

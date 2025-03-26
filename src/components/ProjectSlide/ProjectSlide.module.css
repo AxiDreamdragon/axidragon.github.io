@@ -8,6 +8,21 @@
 	height: calc(100% - 150px);
 }
 
+.snippetContainer {
+	display: grid;
+	grid-template-columns: repeat(3, calc(100% / 3));
+	grid-template-rows: repeat(3, calc(100% / 3));
+	height: 100%;
+}
+
+.container>*,
+.snippetContainer>* {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	/* or cover, depending on your needs */
+}
+
 .infoContainer {
 	display: flex;
 	align-items: center;
@@ -26,12 +41,20 @@
 }
 
 @media (max-width: 825px) {
-	.container {
+
+	.container,
+	.snippetContainer {
 		padding: 25px 10vw 100px 10vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		background: linear-gradient(0deg, var(--shadow) 0%, transparent 15%);
+	}
+
+	.container>*,
+	.snippetContainer>* {
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.infoContainer {
