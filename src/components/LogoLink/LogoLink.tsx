@@ -1,17 +1,21 @@
+import githubLogo from '@/assets/icons/github.png';
+import itchLogo from '@/assets/icons/itch.png';
+import webLogo from '@/assets/icons/web.png';
+
 const logoMap = {
 	github:
 	{
-		logo: require('@/assets/icons/github.png'),
+		logo: githubLogo,
 		title: 'GitHub',
 	},
 	itch:
 	{
-		logo: require('@/assets/icons/itch.png'),
+		logo: itchLogo,
 		title: 'Itch.io',
 	},
 	web:
 	{
-		logo: require('@/assets/icons/web.png'),
+		logo: webLogo,
 		title: 'Website',
 	},
 }
