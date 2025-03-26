@@ -12,7 +12,7 @@ type Props = {
 	disableRotation?: boolean;
 }
 
-const rotationVariation = 7;
+export const rotationVariation = 7;
 
 const ProjectItem: React.FC<Props> = ({
 	imageSource = '',
