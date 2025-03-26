@@ -1,7 +1,7 @@
 .postIt {
 	position: fixed;
-	bottom: 16px;
-	right: 16px;
+	top: 16px;
+	right: calc(50% - 24px);
 	width: 48px;
 	height: 48px;
 	z-index: 100;

@@ -36,7 +36,7 @@ const BackToIndexPostIt = () => {
 			className={styles.postIt}
 			title='Back to index'
 			onClick={() => workIndex.current.scrollIntoView({ behavior: 'smooth' })}
-			style={{ translate: visible ? '0 0' : '128px 128px' }}>
+			style={{ translate: visible ? '0 0' : '0 -128px' }}>
 			<img src={require('@/assets/icons/info.png')} className={styles.postItImage} />
 		</div >
 	);
