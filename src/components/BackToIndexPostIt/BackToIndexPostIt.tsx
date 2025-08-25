@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import infoIcon from '@/assets/icons/info.png';
 import styles from './BackToIndexPostIt.module.css';
 
 const BackToIndexPostIt = () => {
@@ -37,7 +38,7 @@ const BackToIndexPostIt = () => {
 			title='Back to index'
 			onClick={() => workIndex.current.scrollIntoView({ behavior: 'smooth' })}
 			style={{ translate: visible ? '0 0' : '0 -128px' }}>
-			<img src={require('@/assets/icons/info.png')} className={styles.postItImage} />
+			<img src={infoIcon} className={styles.postItImage} />
 		</div >
 	);
 }
