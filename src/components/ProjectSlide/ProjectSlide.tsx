@@ -2,7 +2,7 @@ import ImageSlide from "@components/ImageSlide/ImageSlide";
 import PolaroidDivider from "@components/PolaroidDivider/PolaroidDivider";
 import LogoLink from "@components/LogoLink/LogoLink";
 
-import styles from './ProjectSlide.module.css';
+import styles from './ProjectSlide.module.scss';
 
 type Props = {
 	backgroundImage: string;

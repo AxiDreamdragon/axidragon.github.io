@@ -1,4 +1,4 @@
-import styles from './PressableContent.module.css';
+import styles from './PressableContent.module.scss';
 
 type Props = {
 	children?: React.ReactNode;

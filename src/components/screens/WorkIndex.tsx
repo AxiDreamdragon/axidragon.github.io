@@ -1,6 +1,6 @@
 import ImageSlide from '../ImageSlide/ImageSlide';
 import PROJECTS from '@/data/projects';
-import styles from './WorkIndex.module.css';
+import styles from './WorkIndex.module.scss';
 import { useEffect, useRef } from 'react';
 
 import polaroid from '@/assets/polaroid.webp';

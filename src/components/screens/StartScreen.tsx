@@ -3,7 +3,7 @@ import ImageSlide from "@components/ImageSlide/ImageSlide";
 import intro from "@/assets/videos/intro.mp4";
 import axiInverted from "@/assets/text/axi.png";
 
-import styles from './StartScreen.module.css';
+import styles from './StartScreen.module.scss';
 
 const StartScreen = () => {
 	return (

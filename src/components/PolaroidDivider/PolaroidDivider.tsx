@@ -1,4 +1,4 @@
-import styles from './PolaroidDivider.module.css';
+import styles from './PolaroidDivider.module.scss';
 
 type Props = {
 	children?: React.ReactNode;

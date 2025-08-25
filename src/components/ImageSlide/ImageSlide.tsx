@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ImageSlide.module.css';
+import styles from './ImageSlide.module.scss';
 
 type Props = {
 	imageSource: string;

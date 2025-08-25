@@ -2,7 +2,7 @@ import ImageSlide from "../ImageSlide/ImageSlide";
 
 import texelSky from "@/assets/nature/texel-sky.webp";
 
-import styles from './ContactScreen.module.css';
+import styles from './ContactScreen.module.scss';
 import LogoLink from "../LogoLink/LogoLink";
 
 const ContactScreen = () => {

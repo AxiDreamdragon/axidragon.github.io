@@ -1,6 +1,6 @@
 import texelSky from "@/assets/nature/texel-sky.webp";
 import stretch from "@/assets/stretch.png";
-import styles from './Snippet.module.css';
+import styles from './Snippet.module.scss';
 import LogoLink from "../LogoLink/LogoLink";
 import { useRef } from "react";
 

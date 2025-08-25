@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import infoIcon from '@/assets/icons/info.png';
-import styles from './BackToIndexPostIt.module.css';
+import styles from './BackToIndexPostIt.module.scss';
 
 const BackToIndexPostIt = () => {
 	const workIndex = useRef<HTMLElement>(document.getElementById('WorkIndex') as HTMLElement);

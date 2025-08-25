@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './ProjectItem.module.css';
+import styles from './ProjectItem.module.scss';
 import PressableContent from '../PressableContent/PressableContent';
 import { onDesktop } from '@/utility/userInfo';
 
