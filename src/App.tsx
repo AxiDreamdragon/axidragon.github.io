@@ -8,14 +8,17 @@ import WorkIndex from '@components/screens/WorkIndex';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
 import { onDesktop, onFireFox } from './utility/userInfo';
-import PROJECTS from './data/projects';
 import ContactScreen from './components/screens/ContactScreen';
 import BackToIndexPostIt from './components/BackToIndexPostIt/BackToIndexPostIt';
-import SnippetSlide from './components/ProjectSlide/SnippetSlide';
+import SnippetSlide from './components/Project/ProjectSlide/SnippetSlide';
 
 import texel1 from './assets/nature/texel1.webp';
+import useProjects from './hooks/projects';
+import ProjectSlide from './components/Project/ProjectSlide/ProjectSlide';
 
 function App() {
+  const { projects, loading, error } = useProjects();
+
   useEffect(() => {
     let throttled = false;
 
@@ -38,8 +41,6 @@ function App() {
       const delta = event.deltaY;
 
       if (Math.abs(delta) < 4) {
-        //for scrolling with a touchpad
-        //but also screw touchpads
         return;
       }
 
@@ -75,8 +76,9 @@ function App() {
       <StartScreen />
       <IntroScreen />
       <WorkIndex />
+      {!loading && projects.map((project, i) =>
+        <ProjectSlide key={i} {...project} />)}
       <SnippetSlide backgroundImage={texel1} />
-      {PROJECTS.map((project, _) => project.getProjectSlide())}
       <ContactScreen />
     </div >
   );

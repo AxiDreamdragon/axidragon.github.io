@@ -1,26 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ProjectItem.module.scss';
-import PressableContent from '../PressableContent/PressableContent';
+import PressableContent from '../../PressableContent/PressableContent';
 import { onDesktop } from '@/utility/userInfo';
-
-type Props = {
-	imageSource?: string;
-	videoSource?: string;
-	gridRowSpan?: number;
-	gridColumnSpan?: number;
-	children?: React.ReactNode;
-	disableRotation?: boolean;
-}
+import { ProjectItemData } from '@/hooks/projects';
 
 export const rotationVariation = 7;
 
-const ProjectItem: React.FC<Props> = ({
-	imageSource = '',
-	videoSource = '',
-	gridRowSpan = 1,
-	gridColumnSpan = 1,
-	children,
-	disableRotation = false }) => {
+type Props = {
+	disableRotation?: boolean;
+} & ProjectItemData;
+
+const ProjectItem = ({
+	type,
+	src,
+	height = 1,
+	width = 1,
+	disableRotation = false }: Props) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
@@ -101,42 +96,32 @@ const ProjectItem: React.FC<Props> = ({
 		<div className={styles.wrapper}
 			ref={ref}
 			style={{
-				gridRow: `span ${gridRowSpan}`,
-				gridColumn: `span ${gridColumnSpan}`,
+				gridRow: `span ${height}`,
+				gridColumn: `span ${width}`,
 			}} >
 			{
-				imageSource || videoSource ?
-					videoSource ?
-						<PressableContent videoSource={videoSource}>
-							<video className={styles.projectItem} autoPlay loop muted
-								style={{
-									transform: show ? `rotate(${visibleRotationRef.current}deg)`
-										: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-									transition: `all ${animationTime}s var(--animation-curve)`,
-								}}>
-								<source src={videoSource} type='video/mp4' />
-							</video>
-						</PressableContent>
-						:
-						<PressableContent imageSource={imageSource}>
-							<img src={imageSource} className={styles.projectItem}
-								style={{
-									transform: show ? `rotate(${visibleRotationRef.current}deg)`
-										: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-									transition: `all ${animationTime}s var(--animation-curve)`,
-								}}
-								alt='Project'
-							/>
-						</PressableContent>
+				type === 'video' ?
+					<PressableContent videoSource={src}>
+						<video className={styles.projectItem} autoPlay loop muted
+							style={{
+								transform: show ? `rotate(${visibleRotationRef.current}deg)`
+									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+								transition: `all ${animationTime}s var(--animation-curve)`,
+							}}>
+							<source src={src} type='video/mp4' />
+						</video>
+					</PressableContent>
 					:
-					<div className={styles.projectItem}
-						style={{
-							transform: show ? `rotate(${visibleRotationRef.current}deg)`
-								: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
-							transition: `all ${animationTime}s var(--animation-curve)`,
-						}}>
-						{children}
-					</div>
+					<PressableContent imageSource={src}>
+						<img src={src} className={styles.projectItem}
+							style={{
+								transform: show ? `rotate(${visibleRotationRef.current}deg)`
+									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
+								transition: `all ${animationTime}s var(--animation-curve)`,
+							}}
+							alt='Project'
+						/>
+					</PressableContent>
 			}
 		</div >
 	);

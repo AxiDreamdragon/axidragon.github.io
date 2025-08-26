@@ -3,29 +3,26 @@ import PolaroidDivider from "@components/PolaroidDivider/PolaroidDivider";
 import LogoLink from "@components/LogoLink/LogoLink";
 
 import styles from './ProjectSlide.module.scss';
+import { ProjectData } from "@/hooks/projects";
+import backgroundImage from '@/assets/nature/texel1.webp';
+import ProjectDescription from "../ProjectDescription/ProjectDescription";
+import ProjectItem from "../ProjectItem/ProjectItem";
 
-type Props = {
-	backgroundImage: string;
-	headerImage: string;
-	children?: React.ReactNode;
-	id: string;
-	year?: string;
-	githubLink?: string;
-	webLink?: string;
-}
-
-const ProjectSlide: React.FC<Props> = ({
-	backgroundImage,
-	headerImage,
-	children,
-	id = '',
-	year = '',
+const ProjectSlide = ({
+	id,
+	name,
+	description,
+	media,
+	textImage,
+	year,
 	githubLink = '',
-	webLink = '' }) => {
+	webLink = '' }: ProjectData) => {
+	console.log(name, media);
+
 	return (
 		<ImageSlide imageSource={backgroundImage} id={id}>
 			<PolaroidDivider>
-				<img src={headerImage} className='polaroid-header' alt={id} title={id} />
+				<img src={textImage} className='polaroid-header' alt={id} title={id} />
 				<div className={styles.infoContainer}>
 					{year && <p className={styles.year}>{year}</p>}
 					{(githubLink || webLink) &&
@@ -37,7 +34,9 @@ const ProjectSlide: React.FC<Props> = ({
 				</div>
 			</PolaroidDivider>
 			<div className={styles.container}>
-				{children}
+				<ProjectDescription description={description} />
+				{media.map((item, i) =>
+					<ProjectItem key={i} {...item} />)}
 			</div>
 		</ImageSlide>
 	);

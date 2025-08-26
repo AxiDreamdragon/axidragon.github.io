@@ -17,6 +17,8 @@
 	padding: 25px;
 	color: black;
 	font-size: max(1vw, 2vh);
+	grid-column: span 2;
+	grid-row: span 1;
 }
 
 a {

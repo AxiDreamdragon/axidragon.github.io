@@ -1,6 +1,6 @@
 import ImageSlide from "@components/ImageSlide/ImageSlide";
 import styles from './ProjectSlide.module.scss';
-import Snippet from "../Snippet/Snippet";
+import Snippet from "../../Snippet/Snippet";
 
 type Props = {
 	backgroundImage: string;
