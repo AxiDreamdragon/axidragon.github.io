@@ -75,9 +75,11 @@ function App() {
       {onDesktop() && <FullContentDisplayer />}
       <StartScreen />
       <IntroScreen />
-      <WorkIndex />
-      {!loading && projects.map((project, i) =>
-        <ProjectSlide key={i} {...project} />)}
+      {!loading && <>
+        <WorkIndex keys={projects.map(project => project.name)} />
+        {projects.map((project, i) =>
+          <ProjectSlide key={i} {...project} />)}
+      </>}
       <SnippetSlide backgroundImage={texel1} />
       <ContactScreen />
     </div >

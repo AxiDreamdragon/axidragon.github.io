@@ -41,9 +41,9 @@ const ProjectSlide = ({
 	const [backgroundImage, _] = useState<string>(getBackground());
 
 	return (
-		<ImageSlide imageSource={backgroundImage} id={id}>
+		<ImageSlide imageSource={backgroundImage} id={name}>
 			<PolaroidDivider>
-				<img src={textImage} className='polaroid-header' alt={id} title={id} />
+				<img src={textImage} className='polaroid-header' alt={name} title={name} />
 				<div className={styles.infoContainer}>
 					{year && <p className={styles.year}>{year}</p>}
 					{(githubLink || webLink) &&
