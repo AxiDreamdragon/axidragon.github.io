@@ -1,10 +1,9 @@
-import ProjectItem from "@/components/Project/ProjectItem/ProjectItem";
-
 import { useEffect, useState } from "react";
 
 export type ProjectData = {
 	id: string;
 	name: string;
+	cover: ProjectItemData;
 	description: string[];
 	media: ProjectItemData[];
 	textImage: string;
