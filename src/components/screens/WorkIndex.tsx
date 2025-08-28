@@ -4,13 +4,13 @@ import { useEffect, useRef } from 'react';
 
 import polaroid from '@/assets/polaroid.webp';
 import infoIcon from '@/assets/icons/info.png';
+import { majorProjectCount } from '@/data/constants';
 
 type Props = {
-	majorProjectCount: number;
 	keys: string[];
 }
 
-const WorkIndex = ({ majorProjectCount, keys }: Props) => {
+const WorkIndex = ({ keys }: Props) => {
 	const projectSlides = useRef<{ [key: string]: HTMLElement }>({});
 
 	useEffect(() => {

@@ -4,23 +4,16 @@ import { useEffect } from 'react';
 
 import StartScreen from '@components/screens/StartScreen';
 import IntroScreen from '@components/screens/IntroScreen';
-import WorkIndex from '@components/screens/WorkIndex';
 import FullContentDisplayer from '@/components/FullContentDisplayer/FullContentDisplayer';
 
 import { onDesktop, onFireFox } from './utility/userInfo';
 import ContactScreen from './components/screens/ContactScreen';
 import BackToIndexPostIt from './components/BackToIndexPostIt/BackToIndexPostIt';
-import SnippetSlide from './components/Project/ProjectSlide/SnippetSlide';
 
-import texel1 from './assets/nature/texel1.webp';
-import useProjects from './hooks/projects';
-import ProjectSlide from './components/Project/ProjectSlide/ProjectSlide';
-
-const majorProjectCount = 5;
+import MajorProjects from './components/Project/MajorProjects/MajorProjects';
+import MinorProjects from './components/Project/MinorProjects/MinorProjects';
 
 function App() {
-  const { projects, loading, error } = useProjects();
-
   useEffect(() => {
     let throttled = false;
 
@@ -77,12 +70,8 @@ function App() {
       {onDesktop() && <FullContentDisplayer />}
       <StartScreen />
       <IntroScreen />
-      {!loading && <>
-        <WorkIndex majorProjectCount={majorProjectCount} keys={projects.map(project => project.name)} />
-        {projects.map((project, i) =>
-          i < majorProjectCount - 1 && <ProjectSlide key={i} {...project} />)}
-      </>}
-      <SnippetSlide backgroundImage={texel1} />
+      <MajorProjects />
+      <MinorProjects />
       <ContactScreen />
     </div >
   );
