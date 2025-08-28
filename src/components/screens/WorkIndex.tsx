@@ -15,7 +15,6 @@ const WorkIndex = ({ majorProjectCount, keys }: Props) => {
 
 	useEffect(() => {
 		keys.forEach((key, i) => {
-			console.log(key, i);
 			if (i >= majorProjectCount) {
 				return;
 			}
@@ -31,6 +30,7 @@ const WorkIndex = ({ majorProjectCount, keys }: Props) => {
 		projectSlides.current[name].scrollIntoView({ behavior: 'smooth' });
 	};
 
+	//TODO: prob add headers like 'Major Projects', 'Minor Projects'
 	return (
 		<ImageSlide imageSource={polaroid} id='WorkIndex'>
 			<div className={styles.container}>
