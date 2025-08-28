@@ -1,17 +1,13 @@
-.SnippetContainer {
-	display: flex;
+.Snippet {
+	display: grid;
+	grid-template-rows: auto 100px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	padding: 25px;
+	padding: 1rem;
+	margin: 2rem;
 	box-sizing: border-box;
-}
-
-.Snippet {
-	padding: 13px;
-	display: flex;
-	flex-direction: column;
 	width: 200px;
 	height: 300px;
 	text-align: center;
@@ -19,45 +15,23 @@
 	background-size: 100% 100%;
 	filter: drop-shadow(2px 2px 2px var(--shadow));
 	transition: all 1s var(--animation-curve);
+
+	&:hover {
+		filter: drop-shadow(8px 8px 8px var(--shadow));
+	}
 }
 
-.Snippet:hover {
-	filter: drop-shadow(8px 8px 8px var(--shadow));
-}
-
-.SnippetLinks {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-
-.MediaWrapper {
+.cover {
 	overflow: hidden;
-	position: relative;
-	display: inline-block;
 	transition: translate 0.5s;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.MediaWrapper::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
+	height: 150px;
 	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	box-shadow: inset 1px 1px 2px 2px var(--shadow);
-}
 
-.MediaWrapper>img,
-.MediaWrapper>video {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
+	>img,
+	>video {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 }

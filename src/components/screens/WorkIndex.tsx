@@ -21,9 +21,8 @@ const WorkIndex = ({ keys }: Props) => {
 			projectSlides.current[key] = document.getElementById(key) as HTMLElement;
 		});
 
+		projectSlides.current['Other Projects'] = document.getElementById('minor-projects') as HTMLElement;
 		projectSlides.current['Contact'] = document.getElementById('Contact') as HTMLElement;
-		//TODO:
-		// projectSlides.current['MinorProjects'] = document.getElementById('MinorProjects') as HTMLElement;
 	}, []);
 
 	const handleClick = (name: string) => {
@@ -44,6 +43,12 @@ const WorkIndex = ({ keys }: Props) => {
 					>{key}</p>
 				))}
 				<br />
+				<p
+					onClick={() => handleClick('Other Projects')}
+					className={styles.clickable}
+				>
+					Other Projects
+				</p>
 				<p
 					onClick={() => handleClick('Contact')}
 					className={styles.clickable}

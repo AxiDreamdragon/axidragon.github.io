@@ -1,30 +1,20 @@
 import useProjects from "@/hooks/projects";
-import { useEffect } from "react";
 import ImageSlide from "@/components/ImageSlide/ImageSlide";
 import Snippet from "@/components/Snippet/Snippet";
 import texel1 from '@/assets/nature/texel1.webp';
 import styles from '../ProjectSlide/ProjectSlide.module.scss';
+import { majorProjectCount } from "@/data/constants";
 
 const MinorProjects = () => {
 	const { projects, loading, error } = useProjects();
 
-	useEffect(() => {
-		console.log('loading is currently', loading);
-	}, [loading]);
-
 	return (
 		!loading &&
-		<ImageSlide imageSource={texel1}>
+		<ImageSlide imageSource={texel1} id="minor-projects">
 			<div className={styles.snippetSlideContainer}>
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
-				<Snippet />
+				{projects.map((project, i) => (
+					i >= majorProjectCount && <Snippet key={project.id} project={project} />
+				))}
 			</div>
 		</ImageSlide>
 	);
