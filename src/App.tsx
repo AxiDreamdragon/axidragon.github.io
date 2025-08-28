@@ -16,6 +16,8 @@ import texel1 from './assets/nature/texel1.webp';
 import useProjects from './hooks/projects';
 import ProjectSlide from './components/Project/ProjectSlide/ProjectSlide';
 
+const majorProjectCount = 5;
+
 function App() {
   const { projects, loading, error } = useProjects();
 
@@ -76,9 +78,9 @@ function App() {
       <StartScreen />
       <IntroScreen />
       {!loading && <>
-        <WorkIndex keys={projects.map(project => project.name)} />
+        <WorkIndex majorProjectCount={majorProjectCount} keys={projects.map(project => project.name)} />
         {projects.map((project, i) =>
-          <ProjectSlide key={i} {...project} />)}
+          i < majorProjectCount - 1 && <ProjectSlide key={i} {...project} />)}
       </>}
       <SnippetSlide backgroundImage={texel1} />
       <ContactScreen />
