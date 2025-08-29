@@ -8,7 +8,7 @@ export const rotationVariation = 7;
 
 type Props = {
 	disableRotation?: boolean;
-	disableEntrance?: boolean;
+	snippetItem?: boolean;
 } & ProjectItemData;
 
 const ProjectItem = ({
@@ -17,9 +17,9 @@ const ProjectItem = ({
 	height = 1,
 	width = 1,
 	disableRotation = false,
-	disableEntrance = false }: Props) => {
+	snippetItem = false }: Props) => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || !disableEntrance);
+	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || !snippetItem);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
@@ -27,8 +27,14 @@ const ProjectItem = ({
 	const hiddenRotationRef = useRef<number>(disableRotation ? 0 : 30 * (Math.random() * rotationVariation - rotationVariation / 2));
 
 	useEffect(() => {
-		if (ref.current) {
-			const baseTime = 1.3;
+		const baseTime = 1.3;
+
+		if (snippetItem) {
+			setAnimationTime(baseTime);
+			return;
+		}
+
+		if (ref.current && !snippetItem) {
 			const randomTimeAmplitude = 0.5;
 			const centerClosenessMultiplier = 0.5;
 			const yAmplitude = 100;
@@ -68,6 +74,10 @@ const ProjectItem = ({
 	}, []);
 
 	useEffect(() => {
+		if (snippetItem) {
+			return;
+		}
+
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {

@@ -9,10 +9,9 @@ const MinorProjects = () => {
 	const { projects, loading, error } = useProjects();
 
 	return (
-		!loading &&
 		<ImageSlide imageSource={texel1} id="minor-projects">
 			<div className={styles.snippetSlideContainer}>
-				{projects.map((project, i) => (
+				{!loading && projects.map((project, i) => (
 					i >= majorProjectCount && <Snippet key={project.id} project={project} />
 				))}
 			</div>

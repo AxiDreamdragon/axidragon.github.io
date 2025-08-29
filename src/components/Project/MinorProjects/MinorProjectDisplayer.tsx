@@ -12,23 +12,28 @@ const MinorProjectDisplayer = () => {
 	const handleMinorProjectPressed = (event: Event) => {
 		const customEvent = event as CustomEvent;
 		const project = customEvent.detail as ProjectData;
-		console.log('got project', project.name);
 		setProject(project);
 
+		const items = [];
 		let cellsLeft = mediaCells;
-		const mediaItems: ProjectItemData[] = [];
 
 		for (const mediaItem of project.media) {
-			const x = mediaItem.width || 1;
-			const y = mediaItem.height || 1;
+			const scaledWidth = Math.round((mediaItem.width || 1) / (mediaItem.height || 1));
+			mediaItem.width = scaledWidth;
+			mediaItem.height = 1;
 
-			if (cellsLeft >= x * y) {
-				cellsLeft -= x * y;
-				mediaItems.push(mediaItem);
+			if (cellsLeft >= mediaItem.width) {
+				items.push(mediaItem);
+				cellsLeft -= mediaItem.width;
+
+				if (cellsLeft == 0) {
+					break;
+				}
 			}
 		}
 
-		setMedia(mediaItems);
+		//TODO: honestly, wide element (2 width) should take two cells, preferably
+		setMedia(items);
 	}
 
 	useEffect(() => {
@@ -50,9 +55,11 @@ const MinorProjectDisplayer = () => {
 			style={{
 				backgroundColor: project ? 'var(--shadow)' : 'transparent',
 				pointerEvents: project ? 'all' : 'none',
-				translate: project ? '0' : '0 -100vh',
 			}}>
-			<article className={styles.content}>
+			<article className={styles.content}
+				style={{
+					translate: project ? '0' : '0 -100vh',
+				}}>
 				<div className={styles.description}>
 					<header>
 						<h2>{project?.name}</h2>
@@ -65,9 +72,13 @@ const MinorProjectDisplayer = () => {
 				</div>
 				<div className={styles.linksAndYear}>
 					<time>{project?.year}</time>
+					{project?.githubLink &&
+						<a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>}
+					{project?.webLink &&
+						<a href={project.webLink} target="_blank" rel="noopener noreferrer">Website</a>}
 				</div>
 				{media.map((mediaItem, i) => (
-					<ProjectItem key={i} disableRotation disableEntrance {...mediaItem} />
+					<ProjectItem key={i} disableRotation snippetItem {...mediaItem} />
 				))}
 				<div className={styles.backButton} onClick={backButtonPressed} />
 			</article>
