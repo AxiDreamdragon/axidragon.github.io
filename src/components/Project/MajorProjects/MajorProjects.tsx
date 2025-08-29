@@ -10,7 +10,7 @@ const MajorProjects = () => {
 		!loading && <>
 			<WorkIndex keys={projects.map(project => project.name)} />
 			{projects.map((project, i) =>
-				i < majorProjectCount - 1 && <ProjectSlide key={i} {...project} />)}
+				i < majorProjectCount && <ProjectSlide key={i} {...project} />)}
 		</>
 	);
 };
