@@ -12,8 +12,27 @@
 	width: 100%;
 	height: 100%;
 	transition: all 1s var(--animation-curve);
+
+	&:hover {
+		filter: drop-shadow(16px 16px 16px var(--shadow));
+	}
 }
 
-.projectItem:hover {
-	filter: drop-shadow(16px 16px 16px var(--shadow));
+.inset {
+	filter: none;
+
+	&:hover {
+		filter: none;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		box-shadow: inset 1px 1px 1px 1px var(--shadow);
+	}
 }

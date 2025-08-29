@@ -1,5 +1,5 @@
 import styles from './FullContentDisplayer.module.scss';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const FullContentDisplayer = () => {
 	const [show, setShow] = useState<boolean>(false);

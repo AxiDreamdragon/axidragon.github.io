@@ -8,6 +8,7 @@ export const rotationVariation = 7;
 
 type Props = {
 	disableRotation?: boolean;
+	disableEntrance?: boolean;
 } & ProjectItemData;
 
 const ProjectItem = ({
@@ -15,14 +16,15 @@ const ProjectItem = ({
 	src,
 	height = 1,
 	width = 1,
-	disableRotation = false }: Props) => {
+	disableRotation = false,
+	disableEntrance = false }: Props) => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825);
+	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || !disableEntrance);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
 	const visibleRotationRef = useRef<number>(disableRotation ? 0 : Math.random() * rotationVariation - rotationVariation / 2);
-	const hiddenRotationRef = useRef<number>(30 * (Math.random() * rotationVariation - rotationVariation / 2));
+	const hiddenRotationRef = useRef<number>(disableRotation ? 0 : 30 * (Math.random() * rotationVariation - rotationVariation / 2));
 
 	useEffect(() => {
 		if (ref.current) {
