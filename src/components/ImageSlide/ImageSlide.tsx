@@ -5,12 +5,13 @@ type Props = {
 	imageSource: string;
 	children?: React.ReactNode;
 	id?: string;
+	minorProjects?: boolean;
 }
 
-const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '' }) => {
+const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProjects = false }) => {
 	return (
 		<div
-			className={styles.container}
+			className={`${styles.container} ${minorProjects ? styles.minorProjects : ''}`}
 			style={{ backgroundImage: `url(${imageSource})` }}
 			{...(id && { id })}>
 			{children}

@@ -7,10 +7,8 @@
 	background-repeat: no-repeat;
 	overflow: hidden;
 	scroll-snap-align: start;
-}
 
-@media (max-width: 825px) {
-	.container {
+	@media (max-width: 825px) {
 		min-height: min-content;
 		height: min-content;
 	}
