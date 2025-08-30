@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './MinorProjectDisplayer.module.scss';
 import { ProjectData, ProjectItemData } from '@/hooks/projects';
 import ProjectItem from '../ProjectItem/ProjectItem';
+import githubIcon from '@/assets/icons/github.png';
+import webIcon from '@/assets/icons/web.png';
 
 const mediaCells = 6;
 
@@ -77,17 +79,26 @@ const MinorProjectDisplayer = () => {
 						)}
 					</section>
 				</div>
-				<div className={styles.linksAndYear}>
-					<time>{project?.year}</time>
-					{project?.githubLink &&
-						<a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>}
-					{project?.webLink &&
-						<a href={project.webLink} target="_blank" rel="noopener noreferrer">Website</a>}
-				</div>
+
 				{media.map((mediaItem, i) => (
 					<ProjectItem key={i + mediaItem.src} disableRotation snippetItem {...mediaItem} />
 				))}
-				<div className={styles.backButton} onClick={backButtonPressed} />
+				<footer className={styles.bottomBarContainer}>
+					<div className={styles.bottomBar}>
+						<div className={styles.backButton} onClick={backButtonPressed} />
+						<div className={styles.linksAndYear}>
+							{project?.githubLink &&
+								<a target="_blank" rel="noopener noreferrer">
+									<img src={githubIcon} alt="GitHub" className={styles.icon} />
+								</a>}
+							{project?.webLink &&
+								<a target="_blank" rel="noopener noreferrer">
+									<img src={webIcon} alt="Website" className={styles.icon} />
+								</a>}
+							<time className={styles.year}>{project?.year}</time>
+						</div>
+					</div>
+				</footer>
 			</article>
 		</div>
 	)

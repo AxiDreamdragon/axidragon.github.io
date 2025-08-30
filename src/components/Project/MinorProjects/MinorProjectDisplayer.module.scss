@@ -33,23 +33,55 @@
 }
 
 .description {
-	grid-column: span 2;
+	grid-column: span 3;
 
-	&>p {
+	p {
+		margin: 0.5rem unset;
+	}
+
+	h2 {
+		font-family: 'Caveat', cursive;
+		font-size: 3rem;
+		font-weight: bold;
+		color: #331f2a;
 		margin: 0;
 	}
 }
 
+
+.bottomBarContainer {
+	position: absolute;
+	bottom: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.bottomBar {
+	width: calc(100% - 2rem);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.year {
+	font-family: 'Caveat', cursive;
+	color: #a3425e;
+	font-size: 1.5rem;
+	translate: 0 -.2rem;
+}
+
 .linksAndYear {
-	display: grid;
-	grid-template-rows: repeat(3, 33.33%);
-	text-align: center;
+	display: flex;
+	gap: 0.5rem;
+
+	img {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
 }
 
 .backButton {
-	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
 	width: 2rem;
 	height: 2rem;
 	cursor: pointer;
