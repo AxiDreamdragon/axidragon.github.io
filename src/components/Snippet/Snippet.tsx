@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Snippet.module.scss';
 import { ProjectData } from "@/hooks/projects";
 
+import githubIcon from '@/assets/icons/github.png';
+import webIcon from '@/assets/icons/web.png';
+
 export const rotationVariation = 15;
 
 type Props = {
@@ -12,6 +15,8 @@ function Snippet({ project }: Props) {
 	const [show, setShow] = useState<boolean>(true);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const titleRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
+	const gitRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
+	const webRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
 
 	const onClick = () => {
 		setShow(false);
@@ -56,6 +61,10 @@ function Snippet({ project }: Props) {
 				<h2 className={styles.title} style={{ transform: `rotate(${titleRotation.current}deg)` }}>{project.name}</h2>
 			</div>
 			<sub className={styles.year}>{project.year}</sub>
+			<div className={styles.linkIcons}>
+				{project.githubLink && <img src={githubIcon} alt="GitHub" style={{ transform: `rotate(${gitRotation.current}deg)` }} />}
+				{project.webLink && <img src={webIcon} alt="Web" style={{ transform: `rotate(${webRotation.current}deg)` }} />}
+			</div>
 		</div>
 	);
 }
