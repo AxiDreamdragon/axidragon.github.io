@@ -34,6 +34,10 @@
 
 .description {
 	grid-column: span 2;
+
+	&>p {
+		margin: 0;
+	}
 }
 
 .linksAndYear {
@@ -49,6 +53,6 @@
 	width: 2rem;
 	height: 2rem;
 	cursor: pointer;
-	background-image: url('@/assets/back-placeholder.png');
+	background-image: url('@/assets/back-arrow.png');
 	background-size: 100% 100%;
 }

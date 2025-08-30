@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './MinorProjectDisplayer.module.scss';
 import { ProjectData, ProjectItemData } from '@/hooks/projects';
 import ProjectItem from '../ProjectItem/ProjectItem';
@@ -51,16 +51,22 @@ const MinorProjectDisplayer = () => {
 		window.dispatchEvent(new Event('minorProjectClosed'));
 	}
 
+	const preventClose = (e: React.MouseEvent) => {
+		e.stopPropagation();
+	}
+
 	return (
 		<div className={styles.container}
 			style={{
 				backgroundColor: show ? 'var(--shadow)' : 'transparent',
 				pointerEvents: show ? 'all' : 'none',
-			}}>
+			}}
+			onClick={backButtonPressed}>
 			<article className={styles.content}
 				style={{
 					translate: show ? '0' : '-200dvw 0',
-				}}>
+				}}
+				onClick={preventClose}>
 				<div className={styles.description}>
 					<header>
 						<h2>{project?.name}</h2>
