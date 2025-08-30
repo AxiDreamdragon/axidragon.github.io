@@ -32,7 +32,7 @@ const LogoLink: React.FC<Props> = ({ logoName, link, size = 64 }) => {
 	const logo = logoMap[logoName];
 
 	return (
-		<a href={link} target='_blank' rel='noreferrer'>
+		<a href={link} target='_blank' rel='noreferrer noopener'>
 			<img src={logo.logo} style={{ width: size }} title={logo.title} />
 		</a>
 	);
