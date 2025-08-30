@@ -48,3 +48,26 @@
 		box-shadow: inset 1px 1px 1px 1px var(--shadow);
 	}
 }
+
+.info {
+	position: relative;
+}
+
+.title {
+	font-family: 'Caveat', cursive;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #331f2a;
+	margin: 0;
+	padding: 0;
+	scale: 1.2 0.8;
+}
+
+.year {
+	font-family: 'Caveat', cursive;
+	color: #753d4d;
+	position: absolute;
+	right: .5rem;
+	bottom: .5rem;
+	font-size: 1.5rem;
+}

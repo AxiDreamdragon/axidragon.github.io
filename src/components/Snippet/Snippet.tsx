@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Snippet.module.scss';
 import { ProjectData } from "@/hooks/projects";
 
-export const rotationVariation = 5;
+export const rotationVariation = 15;
 
 type Props = {
 	project: ProjectData;
@@ -11,10 +11,10 @@ type Props = {
 function Snippet({ project }: Props) {
 	const [show, setShow] = useState<boolean>(true);
 	const videoRef = useRef<HTMLVideoElement>(null);
+	const titleRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
 
 	const onClick = () => {
 		setShow(false);
-		console.log('clicked on', project.name);
 		window.dispatchEvent(new CustomEvent('minorProjectPressed', { detail: project }));
 	};
 
@@ -23,7 +23,6 @@ function Snippet({ project }: Props) {
 	};
 
 	const handleMinorProjectClosed = () => {
-		console.log('this is', project.name, 'showing again');
 		setShow(true);
 		videoRef.current?.play();
 	};
@@ -53,10 +52,10 @@ function Snippet({ project }: Props) {
 						</video>
 				}
 			</div>
-			<div>
-				<h2>{project.name}</h2>
-				<sub>{project.year}</sub>
+			<div className={styles.info}>
+				<h2 className={styles.title} style={{ transform: `rotate(${titleRotation.current}deg)` }}>{project.name}</h2>
 			</div>
+			<sub className={styles.year}>{project.year}</sub>
 		</div>
 	);
 }
