@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './MinorProjectDisplayer.module.scss';
 import { ProjectData, ProjectItemData } from '@/hooks/projects';
 import ProjectItem from '../ProjectItem/ProjectItem';
@@ -7,9 +7,12 @@ const mediaCells = 6;
 
 const MinorProjectDisplayer = () => {
 	const [project, setProject] = useState<ProjectData | null>(null);
+	const [show, setShow] = useState(false);
 	const [media, setMedia] = useState<ProjectItemData[]>([]);
 
 	const handleMinorProjectPressed = (event: Event) => {
+		setShow(true);
+
 		const customEvent = event as CustomEvent;
 		const project = customEvent.detail as ProjectData;
 		setProject(project);
@@ -32,7 +35,6 @@ const MinorProjectDisplayer = () => {
 			}
 		}
 
-		//TODO: honestly, wide element (2 width) should take two cells, preferably
 		setMedia(items);
 	}
 
@@ -45,20 +47,19 @@ const MinorProjectDisplayer = () => {
 	}, []);
 
 	const backButtonPressed = () => {
-		setProject(null);
-		setMedia([]);
+		setShow(false);
 		window.dispatchEvent(new Event('minorProjectClosed'));
 	}
 
 	return (
 		<div className={styles.container}
 			style={{
-				backgroundColor: project ? 'var(--shadow)' : 'transparent',
-				pointerEvents: project ? 'all' : 'none',
+				backgroundColor: show ? 'var(--shadow)' : 'transparent',
+				pointerEvents: show ? 'all' : 'none',
 			}}>
 			<article className={styles.content}
 				style={{
-					translate: project ? '0' : '0 -100vh',
+					translate: show ? '0' : '-200dvw 0',
 				}}>
 				<div className={styles.description}>
 					<header>
@@ -78,7 +79,7 @@ const MinorProjectDisplayer = () => {
 						<a href={project.webLink} target="_blank" rel="noopener noreferrer">Website</a>}
 				</div>
 				{media.map((mediaItem, i) => (
-					<ProjectItem key={i} disableRotation snippetItem {...mediaItem} />
+					<ProjectItem key={i + mediaItem.src} disableRotation snippetItem {...mediaItem} />
 				))}
 				<div className={styles.backButton} onClick={backButtonPressed} />
 			</article>
