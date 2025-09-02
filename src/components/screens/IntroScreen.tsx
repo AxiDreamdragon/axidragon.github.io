@@ -7,7 +7,7 @@ import styles from './IntroScreen.module.scss';
 
 function IntroScreen() {
 	return (
-		<ImageSlide imageSource={background}>
+		<ImageSlide imageSource={background} id="intro-screen">
 			<div className={styles.wrapper}>
 				<div className={styles.container}>
 					<p>Hi! I'm axi*! (The asterisk doesn't mean anything, to be honest - but it looks neat, right?)</p>

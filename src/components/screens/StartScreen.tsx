@@ -7,7 +7,7 @@ import styles from './StartScreen.module.scss';
 
 const StartScreen = () => {
 	return (
-		<ImageSlide imageSource={''}>
+		<ImageSlide imageSource={''} id="start-screen">
 			<div className={styles.videoContainer}>
 				<video
 					className={styles.video}

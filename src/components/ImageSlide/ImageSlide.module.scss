@@ -1,7 +1,8 @@
 .container {
+	position: relative;
 	width: 100%;
-	min-height: 100%;
-	height: 100vh;
+	min-height: 100dvh;
+	height: 100dvh;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -12,4 +13,9 @@
 		min-height: min-content;
 		height: min-content;
 	}
+}
+
+.minorProjects {
+	min-height: 100dvh;
+	height: min-content;
 }
