@@ -21,6 +21,11 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProj
 				return;
 			}
 
+			const top = divElementRef.current!.getBoundingClientRect().top;
+
+			if (Math.abs(top) > window.innerHeight * 0.5)
+				return; //out of view
+
 			e.preventDefault();
 
 			if (Math.abs(e.deltaY) < 4) {
@@ -28,7 +33,7 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProj
 				return;
 			}
 
-			const elementTop = divElementRef.current!.getBoundingClientRect().top + window.scrollY;
+			const elementTop = top + window.scrollY;
 			const topDelta = elementTop - window.scrollY;
 			const direction = Math.max(Math.min(e.deltaY, 1), -1);
 
@@ -55,10 +60,10 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProj
 			}
 		}
 
-		divElementRef.current.addEventListener('wheel', onWheel, { passive: false });
+		window.addEventListener('wheel', onWheel, { passive: false });
 
 		return () => {
-			divElementRef.current?.removeEventListener('wheel', onWheel);
+			window.removeEventListener('wheel', onWheel);
 		}
 	}, []);
 
