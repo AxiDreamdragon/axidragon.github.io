@@ -1,12 +1,14 @@
+import { onDesktop } from '@/utility/userInfo';
 import styles from './PressableContent.module.scss';
 
 type Props = {
 	children?: React.ReactNode;
 	videoSource?: string;
 	imageSource?: string;
+	fullscreenOnPhone?: boolean;
 }
 
-const PressableContent = ({ children, videoSource = '', imageSource = '' }: Props) => {
+const PressableContent = ({ children, videoSource = '', imageSource = '', fullscreenOnPhone = false }: Props) => {
 	const type = videoSource ? 'video' : 'image';
 	const source = videoSource || imageSource;
 
@@ -15,6 +17,10 @@ const PressableContent = ({ children, videoSource = '', imageSource = '' }: Prop
 	}
 
 	const handleClick = () => {
+		if (!fullscreenOnPhone && !onDesktop()) {
+			return;
+		}
+
 		const customEvent = new CustomEvent('contentPressed', { detail: { source, type } });
 		window.dispatchEvent(customEvent);
 	}

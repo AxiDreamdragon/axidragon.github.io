@@ -113,7 +113,7 @@ const ProjectItem = ({
 			}} >
 			{
 				type === 'video' ?
-					<PressableContent videoSource={src}>
+					<PressableContent videoSource={src} fullscreenOnPhone={snippetItem}>
 						<video className={styles.projectItem} autoPlay loop muted
 							style={{
 								transform: show ? `rotate(${visibleRotationRef.current}deg)`
@@ -124,7 +124,7 @@ const ProjectItem = ({
 						</video>
 					</PressableContent>
 					:
-					<PressableContent imageSource={src}>
+					<PressableContent imageSource={src} fullscreenOnPhone={snippetItem}>
 						<img src={src} className={styles.projectItem}
 							style={{
 								transform: show ? `rotate(${visibleRotationRef.current}deg)`
