@@ -88,11 +88,11 @@ const MinorProjectDisplayer = () => {
 						<div className={styles.backButton} onClick={backButtonPressed} />
 						<div className={styles.linksAndYear}>
 							{project?.githubLink &&
-								<a target="_blank" rel="noopener noreferrer">
+								<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
 									<img src={githubIcon} alt="GitHub" className={styles.icon} />
 								</a>}
 							{project?.webLink &&
-								<a target="_blank" rel="noopener noreferrer">
+								<a href={project.webLink} target="_blank" rel="noopener noreferrer">
 									<img src={webIcon} alt="Website" className={styles.icon} />
 								</a>}
 							<time className={styles.year}>{project?.year}</time>
