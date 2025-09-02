@@ -22,7 +22,7 @@ const WorkIndex = ({ keys }: Props) => {
 		});
 
 		projectSlides.current['Other Projects'] = document.getElementById('minor-projects') as HTMLElement;
-		projectSlides.current['Contact'] = document.getElementById('Contact') as HTMLElement;
+		projectSlides.current['Contact'] = document.getElementById('contact') as HTMLElement;
 	}, []);
 
 	const handleClick = (name: string) => {

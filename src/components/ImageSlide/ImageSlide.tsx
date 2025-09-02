@@ -5,15 +5,13 @@ type Props = {
 	imageSource: string;
 	children?: React.ReactNode;
 	id?: string;
-	minorProjects?: boolean;
-	noCustomScrolling?: boolean;
 }
 
-const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProjects = false, noCustomScrolling = false }) => {
+const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '' }) => {
 	const divElementRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		if (minorProjects || noCustomScrolling || !divElementRef.current)
+		if (!divElementRef.current)
 			return;
 
 		const onWheel = (e: WheelEvent) => {
@@ -70,7 +68,7 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', minorProj
 	return (
 		<div
 			ref={divElementRef}
-			className={`${styles.container} ${minorProjects ? styles.minorProjects : ''}`}
+			className={styles.container}
 			style={{ backgroundImage: `url(${imageSource})` }}
 			{...(id && { id })}>
 			{children}

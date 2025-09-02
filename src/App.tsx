@@ -17,12 +17,14 @@ function App() {
     <div className="App">
       <BackToIndexPostIt />
       <FullContentDisplayer />
+      <MinorProjectDisplayer />
       <StartScreen />
       <IntroScreen />
       <MajorProjects />
-      <MinorProjects />
-      <MinorProjectDisplayer />
-      <ContactScreen />
+      <div className='minorProjectsAndContact'>
+        <MinorProjects />
+        <ContactScreen />
+      </div>
     </div >
   );
 }
