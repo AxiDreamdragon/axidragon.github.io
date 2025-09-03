@@ -1,1 +1,1 @@
-export const majorProjectCount = 5;
+export const majorProjectCount = 3;

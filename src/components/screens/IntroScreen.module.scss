@@ -3,13 +3,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: center;
 	height: 100%;
-	padding: 25px;
+	padding: 2rem 5rem;
 	max-width: 750px;
 	font-size: min(14px, calc(0.8vw + 1vh));
 	line-height: 2.25;
-	text-align: center;
 	font-weight: bold;
 	color: #790024;
 	mix-blend-mode: color-burn;
@@ -19,13 +17,22 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
 	height: 100vh;
 	width: 100%;
 }
 
+.axiImageContainer {
+	display: flex;
+	justify-content: end;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+}
+
 .axiImage {
+	margin: 0 2rem;
 	width: 300px;
 	max-width: 75%;
-	opacity: 0.8;
+	opacity: 0.9;
+	scale: -1 1;
 }
