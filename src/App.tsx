@@ -15,7 +15,6 @@ function App() {
 
   return (
     <div className="App">
-      <BackToIndexPostIt />
       <FullContentDisplayer />
       <MinorProjectDisplayer />
       <StartScreen />
@@ -25,6 +24,7 @@ function App() {
         <MinorProjects />
         <ContactScreen />
       </div>
+      <BackToIndexPostIt />
     </div >
   );
 }
