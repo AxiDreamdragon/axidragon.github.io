@@ -23,13 +23,11 @@ const MinorProjectDisplayer = () => {
 		let cellsLeft = mediaCells;
 
 		for (const mediaItem of project.media) {
-			const scaledWidth = Math.round((mediaItem.width || 1) / (mediaItem.height || 1));
-			mediaItem.width = scaledWidth;
-			mediaItem.height = 1;
-
-			if (cellsLeft >= mediaItem.width) {
+			const w = mediaItem.width || 1;
+			const h = mediaItem.height || 1;
+			if (cellsLeft >= w * h) {
 				items.push(mediaItem);
-				cellsLeft -= mediaItem.width;
+				cellsLeft -= w * h;
 
 				if (cellsLeft == 0) {
 					break;

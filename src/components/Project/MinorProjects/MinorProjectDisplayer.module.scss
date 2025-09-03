@@ -22,14 +22,13 @@
 	grid-template-rows: repeat(3, calc(33.33% - 2rem / 3));
 	gap: 1rem;
 	padding: 4rem 2rem;
-	height: min(90dvh, 135dvw);
+	height: 90dvh;
 	width: min(60dvh, 90dvw);
 	box-sizing: border-box;
 	transition: translate 1s var(--animation-curve);
 	background-image: url('@/assets/polaroid.webp');
 	background-size: 100% 100%;
 	filter: drop-shadow(6px 6px 1px var(--shadow));
-	transition: all 1s var(--animation-curve);
 }
 
 .description {
@@ -37,11 +36,12 @@
 
 	p {
 		margin: 0.5rem unset;
+		font-size: min(1rem, 3.5vmin);
 	}
 
 	h2 {
 		font-family: 'Caveat', cursive;
-		font-size: 3rem;
+		font-size: min(3rem, 9vw);
 		font-weight: bold;
 		color: #331f2a;
 		margin: 0;
