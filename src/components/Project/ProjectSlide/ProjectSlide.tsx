@@ -28,9 +28,7 @@ const getBackground = (): string => {
 	return availableBackgrounds.splice(randomIndex, 1)[0];
 }
 
-
 const ProjectSlide = ({
-	id,
 	name,
 	description,
 	media,
@@ -39,9 +37,14 @@ const ProjectSlide = ({
 	githubLink = '',
 	webLink = '' }: ProjectData) => {
 	const [backgroundImage, _] = useState<string>(getBackground());
+	const [inView, setInView] = useState<boolean>(false);
+
+	const onView = () => {
+		setInView(true);
+	}
 
 	return (
-		<ImageSlide imageSource={backgroundImage} id={name}>
+		<ImageSlide imageSource={backgroundImage} id={name} onView={onView}>
 			<PolaroidDivider>
 				<img src={textImage} className='polaroid-header' alt={name} title={name} />
 				<div className={styles.infoContainer}>
@@ -56,7 +59,7 @@ const ProjectSlide = ({
 			</PolaroidDivider>
 			<div className={styles.container}>
 				<ProjectDescription description={description} />
-				{media.map((item, i) =>
+				{inView && media.map((item, i) =>
 					<ProjectItem key={i} {...item} />)}
 			</div>
 		</ImageSlide>

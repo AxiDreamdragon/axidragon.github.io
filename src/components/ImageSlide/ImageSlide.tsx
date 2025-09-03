@@ -5,9 +5,10 @@ type Props = {
 	imageSource: string;
 	children?: React.ReactNode;
 	id?: string;
+	onView?: () => void; //to be fired the first time the slide is viewed
 }
 
-const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '' }) => {
+const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', onView }) => {
 	const divElementRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -63,6 +64,33 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '' }) => {
 		return () => {
 			window.removeEventListener('wheel', onWheel);
 		}
+	}, []);
+
+	useEffect(() => {
+		if (!divElementRef.current)
+			return;
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					onView?.();
+				}
+			},
+			{
+				threshold: 0,
+				rootMargin: '100px',
+			}
+		);
+
+		if (divElementRef.current) {
+			observer.observe(divElementRef.current);
+		}
+
+		return () => {
+			if (divElementRef.current) {
+				observer.unobserve(divElementRef.current);
+			}
+		};
 	}, []);
 
 	return (
