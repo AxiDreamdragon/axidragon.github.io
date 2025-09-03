@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './ImageSlide.module.scss';
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
 
 const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', onView }) => {
 	const divElementRef = useRef<HTMLDivElement>(null);
+	const [inView, setInView] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (!divElementRef.current)
@@ -74,6 +75,7 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', onView })
 			([entry]) => {
 				if (entry.isIntersecting) {
 					onView?.();
+					setInView(true);
 				}
 			},
 			{
@@ -97,7 +99,7 @@ const ImageSlide: React.FC<Props> = ({ imageSource, children, id = '', onView })
 		<div
 			ref={divElementRef}
 			className={styles.container}
-			style={{ backgroundImage: `url(${imageSource})` }}
+			{...(inView && { style: { backgroundImage: `url(${imageSource})` } })}
 			{...(id && { id })}>
 			{children}
 		</div>
