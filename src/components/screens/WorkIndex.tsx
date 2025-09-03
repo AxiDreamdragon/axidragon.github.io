@@ -3,7 +3,7 @@ import styles from './WorkIndex.module.scss';
 import { useEffect, useRef } from 'react';
 
 import polaroid from '@/assets/polaroid.webp';
-import infoIcon from '@/assets/icons/home.png';
+import indexText from '@/assets/icons/index.png';
 import { majorProjectCount } from '@/data/constants';
 
 type Props = {
@@ -32,7 +32,7 @@ const WorkIndex = ({ keys }: Props) => {
 	return (
 		<ImageSlide imageSource={polaroid} id='WorkIndex'>
 			<div className={styles.container}>
-				<img src={infoIcon} className={styles.infoIcon} />
+				<img src={indexText} className={styles.indexText} />
 				{keys.map((key, i) => (
 					i < majorProjectCount &&
 					<p
