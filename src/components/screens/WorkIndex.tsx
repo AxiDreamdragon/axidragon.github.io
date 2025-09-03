@@ -3,7 +3,7 @@ import styles from './WorkIndex.module.scss';
 import { useEffect, useRef } from 'react';
 
 import polaroid from '@/assets/polaroid.webp';
-import infoIcon from '@/assets/icons/info.png';
+import infoIcon from '@/assets/icons/home.png';
 import { majorProjectCount } from '@/data/constants';
 
 type Props = {
