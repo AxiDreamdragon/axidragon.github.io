@@ -13,12 +13,20 @@ type Props = {
 
 function Snippet({ project }: Props) {
 	const [show, setShow] = useState<boolean>(true);
+	const divRef = useRef<HTMLDivElement>(null!);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const titleRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
 	const gitRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
 	const webRotation = useRef<number>(Math.random() * rotationVariation - rotationVariation / 2);
+	const translationRef = useRef<{ x: number, y: number }>({ x: 0, y: 0 });
 
 	const onClick = () => {
+		const boundingRect = divRef.current.getBoundingClientRect();
+		translationRef.current =
+		{
+			x: -boundingRect.x - boundingRect.width - 65,
+			y: (window.innerHeight / 2 - (boundingRect.y + boundingRect.height / 2))
+		};
 		setShow(false);
 		window.dispatchEvent(new CustomEvent('minorProjectPressed', { detail: project }));
 	};
@@ -28,6 +36,7 @@ function Snippet({ project }: Props) {
 	};
 
 	const handleMinorProjectClosed = () => {
+		translationRef.current = { x: 0, y: 0 };
 		setShow(true);
 		videoRef.current?.play();
 	};
@@ -43,10 +52,14 @@ function Snippet({ project }: Props) {
 	}, []);
 
 	return (
-		<div className={styles.Snippet} onClick={onClick} style={{
+		<div className={`${styles.Snippet} ${!show ? styles.clicked : ''}`} onClick={onClick} style={{
 			pointerEvents: show ? 'auto' : 'none',
-			translate: show ? '0' : '-100dvw 0',
-		}}>
+			rotate: !show ? `${-translationRef.current.y / window.innerWidth * 60}deg` : '0deg',
+			zIndex: !show ? 1 : 0,
+			top: translationRef.current.y,
+			left: translationRef.current.x
+		}}
+			ref={divRef}>
 			<div className={styles.cover}>
 				{
 					project.cover.type === 'image' ?
