@@ -9,11 +9,12 @@ const mediaCells = 6;
 
 const MinorProjectDisplayer = () => {
 	const [project, setProject] = useState<ProjectData | null>(null);
+	const [active, setActive] = useState(false);
 	const [show, setShow] = useState(false);
 	const [media, setMedia] = useState<ProjectItemData[]>([]);
 
 	const handleMinorProjectPressed = (event: Event) => {
-		setShow(true);
+		setActive(true);
 
 		const customEvent = event as CustomEvent;
 		const project = customEvent.detail as ProjectData;
@@ -36,6 +37,10 @@ const MinorProjectDisplayer = () => {
 		}
 
 		setMedia(items);
+
+		setTimeout(() => {
+			setShow(true)
+		}, 260); //snippet animation duration
 	}
 
 	useEffect(() => {
@@ -47,6 +52,7 @@ const MinorProjectDisplayer = () => {
 	}, []);
 
 	const backButtonPressed = () => {
+		setActive(false);
 		setShow(false);
 		window.dispatchEvent(new Event('minorProjectClosed'));
 	}
@@ -59,12 +65,14 @@ const MinorProjectDisplayer = () => {
 		<div className={styles.container}
 			style={{
 				backgroundColor: show ? 'var(--shadow)' : 'transparent',
-				pointerEvents: show ? 'all' : 'none',
+				pointerEvents: active ? 'all' : 'none',
 			}}
 			onClick={backButtonPressed}>
 			<article className={styles.content}
 				style={{
-					translate: show ? '0' : '-200dvw 0',
+					translate: show ? '0' : '-100dvw 0',
+					rotate: show ? '0deg' : '10deg',
+					filter: show ? undefined : 'drop-shadow(50px 50px 100px var(--shadow))',
 				}}
 				onClick={preventClose}>
 				<div className={styles.description}>

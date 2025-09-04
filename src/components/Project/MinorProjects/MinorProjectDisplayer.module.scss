@@ -25,7 +25,9 @@
 	height: 90dvh;
 	width: min(60dvh, 90dvw);
 	box-sizing: border-box;
-	transition: translate 1s var(--animation-curve);
+	transition: translate .78s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+		rotate .9s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+		filter 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	background-image: url('@/assets/polaroid.webp');
 	background-size: 100% 100%;
 	filter: drop-shadow(6px 6px 1px var(--shadow));
