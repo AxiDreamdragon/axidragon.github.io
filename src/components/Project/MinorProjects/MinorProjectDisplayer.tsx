@@ -70,7 +70,7 @@ const MinorProjectDisplayer = () => {
 			onClick={backButtonPressed}>
 			<article className={styles.content}
 				style={{
-					translate: show ? '0' : '-100dvw 0',
+					translate: show ? '0' : 'calc(-100dvw - 150px) 0',
 					rotate: show ? '0deg' : '10deg',
 					filter: show ? undefined : 'drop-shadow(50px 50px 100px var(--shadow))',
 				}}
