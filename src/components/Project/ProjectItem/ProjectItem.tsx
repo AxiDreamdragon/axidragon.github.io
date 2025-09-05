@@ -23,6 +23,7 @@ const ProjectItem = ({
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
+	const videoRef = useRef<HTMLVideoElement>(null);
 	const visibleRotationRef = useRef<number>(disableRotation ? 0 : Math.random() * rotationVariation - rotationVariation / 2);
 	const hiddenRotationRef = useRef<number>(disableRotation ? 0 : 30 * (Math.random() * rotationVariation - rotationVariation / 2));
 
@@ -61,16 +62,20 @@ const ProjectItem = ({
 		}
 	}, [ref.current]);
 
-	const onResize = () => {
-		setForceVisible(window.innerWidth < 825);
-	}
-
 	useEffect(() => {
+		const onResize = () => {
+			setForceVisible(window.innerWidth < 825);
+		}
+
 		window.addEventListener('resize', onResize);
 
 		return () => {
 			window.removeEventListener('resize', onResize);
 		}
+	}, []);
+
+	useEffect(() => {
+
 	}, []);
 
 	useEffect(() => {
@@ -81,9 +86,15 @@ const ProjectItem = ({
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
-					console.log('first time seeing', src);
 					setIsVisible(true);
-					observer.unobserve(entry.target);
+
+					if (videoRef.current) {
+						console.log('playing', src);
+						videoRef.current.play();
+					}
+				} else if (videoRef.current) {
+					console.log('pausing', src);
+					videoRef.current.pause();
 				}
 			});
 		},
@@ -115,7 +126,7 @@ const ProjectItem = ({
 			{
 				type === 'video' ?
 					<PressableContent videoSource={src} fullscreenOnPhone={snippetItem}>
-						<video className={styles.projectItem} autoPlay loop muted
+						<video className={styles.projectItem} ref={videoRef} loop muted
 							style={{
 								transform: show ? `rotate(${visibleRotationRef.current}deg)`
 									: `${hiddenTranslation} rotate(${hiddenRotationRef.current}deg)`,
