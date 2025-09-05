@@ -9,6 +9,7 @@ const FullContentDisplayer = () => {
 	const handleClick = () => {
 		if (show) {
 			setShow(false);
+			window.dispatchEvent(new Event('full-content-displayer-closed'));
 		}
 	}
 

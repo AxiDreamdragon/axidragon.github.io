@@ -18,8 +18,9 @@ const ProjectItem = ({
 	width = 1,
 	disableRotation = false,
 	snippetItem = false }: Props) => {
-	const [isVisible, setIsVisible] = useState(false);
-	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || snippetItem);
+	const [isSeen, setIsSeen] = useState(false);
+	const [forceSeen, setForceSeen] = useState(window.innerWidth < 825 || snippetItem);
+	const isVisibleRef = useRef<boolean>(false);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ const ProjectItem = ({
 
 	useEffect(() => {
 		const onResize = () => {
-			setForceVisible(window.innerWidth < 825);
+			setForceSeen(window.innerWidth < 825);
 		}
 
 		window.addEventListener('resize', onResize);
@@ -75,7 +76,29 @@ const ProjectItem = ({
 	}, []);
 
 	useEffect(() => {
+		if (!videoRef.current) {
+			return;
+		}
 
+		const onContentPressed = () => {
+			if (isVisibleRef.current) {
+				videoRef.current?.pause();
+			}
+		}
+
+		const onFullContentDisplayerClosed = () => {
+			if (isVisibleRef.current) {
+				videoRef.current?.play();
+			}
+		}
+
+		window.addEventListener('contentPressed', onContentPressed);
+		window.addEventListener('full-content-displayer-closed', onFullContentDisplayerClosed);
+
+		return () => {
+			window.removeEventListener('contentPressed', onContentPressed);
+			window.removeEventListener('full-content-displayer-closed', onFullContentDisplayerClosed);
+		}
 	}, []);
 
 	useEffect(() => {
@@ -85,15 +108,15 @@ const ProjectItem = ({
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
+				isVisibleRef.current = entry.isIntersecting;
+
 				if (entry.isIntersecting) {
-					setIsVisible(true);
+					setIsSeen(true);
 
 					if (videoRef.current) {
-						console.log('playing', src);
 						videoRef.current.play();
 					}
 				} else if (videoRef.current) {
-					console.log('pausing', src);
 					videoRef.current.pause();
 				}
 			});
@@ -114,7 +137,7 @@ const ProjectItem = ({
 		};
 	}, []);
 
-	const show = isVisible || forceVisible;
+	const show = isSeen || forceSeen;
 
 	return (
 		<div className={styles.wrapper}
