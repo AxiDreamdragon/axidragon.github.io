@@ -4,10 +4,10 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	height: 100%;
-	padding: 2rem 5rem;
-	max-width: 750px;
-	font-size: min(14px, calc(0.8vw + 1vh));
-	line-height: 2.25;
+	padding: 2rem min(5rem, 10dvw);
+	max-width: 850px;
+	font-size: min(1rem, .8vmin + .8vmax);
+	line-height: 2;
 	font-weight: bold;
 	color: #3f0013;
 	mix-blend-mode: color-burn;
@@ -31,8 +31,7 @@
 
 .axiImage {
 	margin: 0 2rem;
-	width: 300px;
-	max-width: 75%;
+	height: 22dvh;
 	opacity: 0.9;
 	scale: -1 1;
 }
