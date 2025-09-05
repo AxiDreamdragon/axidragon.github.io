@@ -8,7 +8,7 @@ const ProjectDescription = ({ description }: Props) => {
 	return (
 		<div className={styles.wrapper} style={{
 			gridRow: 'span 1',
-			gridColumn: 'span 2'
+			gridColumn: `span ${description.length > 3 ? 3 : 2}`
 		}}>
 			<div className={styles.projectItem}>
 				<div className="description">
