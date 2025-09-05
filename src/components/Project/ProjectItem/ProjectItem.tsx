@@ -19,7 +19,7 @@ const ProjectItem = ({
 	disableRotation = false,
 	snippetItem = false }: Props) => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || !snippetItem);
+	const [forceVisible, setForceVisible] = useState(window.innerWidth < 825 || snippetItem);
 	const [hiddenTranslation, setHiddenTranslation] = useState('');
 	const [animationTime, setAnimationTime] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);
@@ -81,6 +81,7 @@ const ProjectItem = ({
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
+					console.log('first time seeing', src);
 					setIsVisible(true);
 					observer.unobserve(entry.target);
 				}
