@@ -18,9 +18,9 @@ function IntroScreen() {
 					<p>Combining this with the creative skills I've practiced and learnt over the years, I now create unique web-apps, exploring what a bunch of lines of TypeScript and HTML can accomplish.</p>
 					<p>My game artist background is still here, though! In my free time (and if I'm not programming), I enjoy drawing, 3D modeling, cooking, and being a cartoon dragon online. I've also been getting a bit more into maker electronics and reading!</p>
 				</div>
-				<div className={styles.axiImageContainer}>
-					<img src={axi} alt="Axi" className={styles.axiImage} />
-				</div>
+			</div>
+			<div className={styles.axiImageContainer}>
+				<img src={axi} alt="Axi" className={styles.axiImage} />
 			</div>
 		</ImageSlide >
 	);
