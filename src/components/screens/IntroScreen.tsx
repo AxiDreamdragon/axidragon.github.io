@@ -11,7 +11,7 @@ function IntroScreen() {
 			<div className={styles.wrapper}>
 				<div className={styles.container}>
 					<p>Hi! I'm axi*! (The asterisk doesn't mean anything, to be honest - but it looks neat, right?)</p>
-					<p>I'm passionate about creating software which can help people! I do this by making games and interactions that let people experience moments or viewpoints that they would otherwise not have, or by developing software that facilitates tedious processes. I tend to use TypeScript and modern web frameworks, but I'm always curious to explore other technologies if they lead to new, exciting projects!</p>
+					<p>I'm passionate about creating software that helps people! I do this by making games and interactions that let people experience moments or viewpoints that they would otherwise not experience, or by developing software that facilitates tedious processes. I tend to use TypeScript and modern web frameworks, but I'm always curious to explore other technologies if they lead to new, exciting projects!</p>
 					<p>This passion started a couple years ago, when I made the decision to apply as a Game Artist
 						at the University of Arts Utrecht. I got a spot!</p>
 					<p>Funnily enough though, although I thought I <i>really</i> wanted to be a game artist, my first game development lesson immediately changed my life. I loved (still do, for the record!) the problem-solving aspect of coding!</p>
