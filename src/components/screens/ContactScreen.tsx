@@ -9,7 +9,7 @@ const ContactScreen = () => {
 				<p>Send me an email at:</p>
 				<p>axi |at| axidreamdragon |dot| com</p>
 				<div className={styles.linkContainer}>
-					<LogoLink logoName={'github'} link='https://github.com/AxiDragon' />
+					<LogoLink logoName={'github'} link='https://github.com/AxiDreamdragon' />
 					<LogoLink logoName={'itch'} link='https://axidreamdragon.itch.io/' />
 				</div>
 			</div>
