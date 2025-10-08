@@ -15,8 +15,8 @@ function IntroScreen() {
 					<p>This passion started a couple years ago, when I made the decision to apply as a Game Artist
 						at the University of Arts Utrecht. I got a spot!</p>
 					<p>Funnily enough though, although I thought I <i>really</i> wanted to be a game artist, my first game development lesson immediately changed my life. I loved (still do, for the record!) the problem-solving aspect of coding!</p>
-					<p>I stopped being a game artist, and became a game designer. I learnt C# and Unity, but also branched out to Godot, Python, Java, and what I now consider my specialty: web development!</p>
-					<p>My game artist background is still here, though! In my free time (and if I'm not programming), I enjoy drawing, 3D modeling, cooking, and being a cartoon dragon online. I've also been getting a bit more into maker electronics and reading!</p>
+					<p>I stopped being a game artist, and became a game designer. I learnt C# and Unity, but also branched out to Godot, Python, Java, and what I now consider my specialty: interactive web development!</p>
+					<p>My game artist background is still here, though! In my free time (and if I'm not programming), I enjoy drawing, 3D modeling, and cooking. I've also been getting a bit more into maker electronics and reading!</p>
 				</div>
 			</div>
 			<div className={styles.axiImageContainer}>
